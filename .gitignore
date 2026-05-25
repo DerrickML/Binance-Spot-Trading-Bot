@@ -8,3 +8,9 @@ node_modules/
 dist/
 build/
 .DS_Store
+
+# Runtime data — generated on each environment
+data/
+*.db
+logs/
+/binance_trading_bot.egg-info
