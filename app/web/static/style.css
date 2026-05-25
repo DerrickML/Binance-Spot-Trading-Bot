@@ -264,6 +264,7 @@ input:focus, select:focus, textarea:focus {
   border-bottom: 2px solid transparent;
   transition: all var(--transition);
   user-select: none;
+  -webkit-user-select: none;
 }
 .nav-tab:hover { color: var(--text-primary); }
 .nav-tab.active {
