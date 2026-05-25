@@ -1,0 +1,4597 @@
+{
+  "title": "Matrix Optimization Report",
+  "symbols": [
+    "BTCUSDT",
+    "ETHUSDT",
+    "BNBUSDT"
+  ],
+  "intervals": [
+    "15m",
+    "1h",
+    "4h"
+  ],
+  "lookback_days": 180,
+  "strategies_optimized": 8,
+  "total_param_sets_evaluated": 136,
+  "global_best": {
+    "strategy_name": "bollinger_mean_reversion",
+    "params": {
+      "bb_period": 30,
+      "bb_std_dev": 2.5,
+      "cooldown_bars": 6
+    },
+    "datasets_evaluated": 9,
+    "datasets_qualified": 5,
+    "datasets_profitable": 5,
+    "datasets_tradable": 9,
+    "avg_return": -0.0055,
+    "avg_sharpe": -0.09,
+    "avg_alpha": 0.3208,
+    "max_drawdown": 0.1039,
+    "avg_profit_factor": 0.9249,
+    "total_trades": 211,
+    "consistency_score": 0.5556,
+    "pass_rate": 0.5556,
+    "avg_oos_return": 0.0036,
+    "avg_degradation": 6.6893,
+    "robustness_score": 0.4151,
+    "all_qualified": false,
+    "approved_datasets": [
+      {
+        "symbol": "BTCUSDT",
+        "interval": "15m",
+        "approved": true,
+        "reasons": [
+          "approved"
+        ]
+      },
+      {
+        "symbol": "BTCUSDT",
+        "interval": "1h",
+        "approved": false,
+        "reasons": [
+          "Return -3.69% < min 0.00%",
+          "Sharpe -1.52 < min 0.00",
+          "Profit factor 0.53 < min 0.80"
+        ]
+      },
+      {
+        "symbol": "BTCUSDT",
+        "interval": "4h",
+        "approved": false,
+        "reasons": [
+          "Return -0.38% < min 0.00%",
+          "Sharpe -0.17 < min 0.00"
+        ]
+      },
+      {
+        "symbol": "ETHUSDT",
+        "interval": "15m",
+        "approved": true,
+        "reasons": [
+          "approved"
+        ]
+      },
+      {
+        "symbol": "ETHUSDT",
+        "interval": "1h",
+        "approved": false,
+        "reasons": [
+          "Return -9.39% < min 0.00%",
+          "Sharpe -2.86 < min 0.00",
+          "Profit factor 0.30 < min 0.80"
+        ]
+      },
+      {
+        "symbol": "ETHUSDT",
+        "interval": "4h",
+        "approved": true,
+        "reasons": [
+          "approved"
+        ]
+      },
+      {
+        "symbol": "BNBUSDT",
+        "interval": "15m",
+        "approved": true,
+        "reasons": [
+          "approved"
+        ]
+      },
+      {
+        "symbol": "BNBUSDT",
+        "interval": "1h",
+        "approved": false,
+        "reasons": [
+          "Return -2.20% < min 0.00%",
+          "Sharpe -0.92 < min 0.00",
+          "Profit factor 0.79 < min 0.80"
+        ]
+      },
+      {
+        "symbol": "BNBUSDT",
+        "interval": "4h",
+        "approved": true,
+        "reasons": [
+          "approved"
+        ]
+      }
+    ]
+  },
+  "global_best_qualified": null,
+  "per_strategy": [
+    {
+      "strategy": "ema_atr_crossover",
+      "total_sets": 16,
+      "evaluated": 16,
+      "top_5": [
+        {
+          "strategy_name": "ema_atr_crossover",
+          "params": {
+            "fast_ema": 12,
+            "slow_ema": 34,
+            "atr_min_threshold": 0.5,
+            "cooldown_bars": 8
+          },
+          "datasets_evaluated": 9,
+          "datasets_qualified": 1,
+          "datasets_profitable": 2,
+          "datasets_tradable": 9,
+          "avg_return": -0.0592,
+          "avg_sharpe": -2.3451,
+          "avg_alpha": 0.267,
+          "max_drawdown": 0.1573,
+          "avg_profit_factor": 0.6271,
+          "total_trades": 275,
+          "consistency_score": 0.2222,
+          "pass_rate": 0.1111,
+          "avg_oos_return": -0.0093,
+          "avg_degradation": 1.1914,
+          "robustness_score": 0.3058,
+          "all_qualified": false,
+          "approved_datasets": [
+            {
+              "symbol": "BTCUSDT",
+              "interval": "15m",
+              "approved": true,
+              "reasons": [
+                "approved"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -7.02% < min 0.00%",
+                "Sharpe -2.48 < min 0.00",
+                "Profit factor 0.58 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -5.20% < min 0.00%",
+                "Sharpe -2.86 < min 0.00",
+                "Profit factor 0.52 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -2.65% < min 0.00%",
+                "Sharpe -1.93 < min 0.00",
+                "Profit factor 0.58 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -11.70% < min 0.00%",
+                "Sharpe -2.86 < min 0.00",
+                "Profit factor 0.69 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -8.09% < min 0.00%",
+                "Sharpe -3.57 < min 0.00",
+                "Profit factor 0.61 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Sharpe -0.07 < min 0.00",
+                "Profit factor 0.62 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -7.46% < min 0.00%",
+                "Sharpe -2.48 < min 0.00",
+                "Profit factor 0.59 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -11.38% < min 0.00%",
+                "Sharpe -5.08 < min 0.00",
+                "Profit factor 0.63 < min 0.80"
+              ]
+            }
+          ]
+        },
+        {
+          "strategy_name": "ema_atr_crossover",
+          "params": {
+            "fast_ema": 12,
+            "slow_ema": 34,
+            "atr_min_threshold": 0.5,
+            "cooldown_bars": 5
+          },
+          "datasets_evaluated": 9,
+          "datasets_qualified": 1,
+          "datasets_profitable": 2,
+          "datasets_tradable": 9,
+          "avg_return": -0.0616,
+          "avg_sharpe": -2.4533,
+          "avg_alpha": 0.2647,
+          "max_drawdown": 0.1577,
+          "avg_profit_factor": 0.6385,
+          "total_trades": 280,
+          "consistency_score": 0.2222,
+          "pass_rate": 0.1111,
+          "avg_oos_return": -0.0106,
+          "avg_degradation": 1.2554,
+          "robustness_score": 0.3053,
+          "all_qualified": false,
+          "approved_datasets": [
+            {
+              "symbol": "BTCUSDT",
+              "interval": "15m",
+              "approved": true,
+              "reasons": [
+                "approved"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -7.02% < min 0.00%",
+                "Sharpe -2.48 < min 0.00",
+                "Profit factor 0.58 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -6.51% < min 0.00%",
+                "Sharpe -3.54 < min 0.00",
+                "Profit factor 0.49 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -2.65% < min 0.00%",
+                "Sharpe -1.93 < min 0.00",
+                "Profit factor 0.58 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -11.75% < min 0.00%",
+                "Sharpe -2.85 < min 0.00",
+                "Profit factor 0.74 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -10.16% < min 0.00%",
+                "Sharpe -4.44 < min 0.00",
+                "Profit factor 0.64 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Sharpe -0.07 < min 0.00",
+                "Profit factor 0.62 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -6.14% < min 0.00%",
+                "Sharpe -1.92 < min 0.00",
+                "Profit factor 0.64 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -11.38% < min 0.00%",
+                "Sharpe -5.08 < min 0.00",
+                "Profit factor 0.63 < min 0.80"
+              ]
+            }
+          ]
+        },
+        {
+          "strategy_name": "ema_atr_crossover",
+          "params": {
+            "fast_ema": 8,
+            "slow_ema": 34,
+            "atr_min_threshold": 0.3,
+            "cooldown_bars": 5
+          },
+          "datasets_evaluated": 9,
+          "datasets_qualified": 1,
+          "datasets_profitable": 2,
+          "datasets_tradable": 9,
+          "avg_return": -0.0551,
+          "avg_sharpe": -2.1157,
+          "avg_alpha": 0.2711,
+          "max_drawdown": 0.1437,
+          "avg_profit_factor": Infinity,
+          "total_trades": 197,
+          "consistency_score": 0.2222,
+          "pass_rate": 0.1111,
+          "avg_oos_return": -0.0041,
+          "avg_degradation": 0.7359,
+          "robustness_score": 0.2805,
+          "all_qualified": false,
+          "approved_datasets": [
+            {
+              "symbol": "BTCUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Trades 1 < min 5"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -8.49% < min 0.00%",
+                "Sharpe -3.29 < min 0.00",
+                "Profit factor 0.39 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -9.26% < min 0.00%",
+                "Sharpe -6.27 < min 0.00",
+                "Profit factor 0.30 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "15m",
+              "approved": true,
+              "reasons": [
+                "approved"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -11.99% < min 0.00%",
+                "Sharpe -3.32 < min 0.00",
+                "Profit factor 0.78 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -5.74% < min 0.00%",
+                "Sharpe -2.47 < min 0.00",
+                "Profit factor 0.63 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -2.93% < min 0.00%",
+                "Sharpe -1.72 < min 0.00",
+                "Profit factor 0.37 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -2.34% < min 0.00%",
+                "Sharpe -0.81 < min 0.00",
+                "Profit factor 0.65 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -12.15% < min 0.00%",
+                "Sharpe -5.13 < min 0.00",
+                "Profit factor 0.64 < min 0.80"
+              ]
+            }
+          ]
+        },
+        {
+          "strategy_name": "ema_atr_crossover",
+          "params": {
+            "fast_ema": 8,
+            "slow_ema": 34,
+            "atr_min_threshold": 0.5,
+            "cooldown_bars": 5
+          },
+          "datasets_evaluated": 9,
+          "datasets_qualified": 1,
+          "datasets_profitable": 2,
+          "datasets_tradable": 9,
+          "avg_return": -0.0554,
+          "avg_sharpe": -2.1329,
+          "avg_alpha": 0.2708,
+          "max_drawdown": 0.1437,
+          "avg_profit_factor": Infinity,
+          "total_trades": 193,
+          "consistency_score": 0.2222,
+          "pass_rate": 0.1111,
+          "avg_oos_return": -0.0041,
+          "avg_degradation": 0.6777,
+          "robustness_score": 0.2747,
+          "all_qualified": false,
+          "approved_datasets": [
+            {
+              "symbol": "BTCUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Trades 1 < min 5"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -8.44% < min 0.00%",
+                "Sharpe -3.28 < min 0.00",
+                "Profit factor 0.38 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -9.67% < min 0.00%",
+                "Sharpe -6.60 < min 0.00",
+                "Profit factor 0.27 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "15m",
+              "approved": true,
+              "reasons": [
+                "approved"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -11.99% < min 0.00%",
+                "Sharpe -3.32 < min 0.00",
+                "Profit factor 0.78 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -5.74% < min 0.00%",
+                "Sharpe -2.47 < min 0.00",
+                "Profit factor 0.63 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -2.93% < min 0.00%",
+                "Sharpe -1.72 < min 0.00",
+                "Profit factor 0.37 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -2.34% < min 0.00%",
+                "Sharpe -0.81 < min 0.00",
+                "Profit factor 0.65 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -12.15% < min 0.00%",
+                "Sharpe -5.13 < min 0.00",
+                "Profit factor 0.64 < min 0.80"
+              ]
+            }
+          ]
+        },
+        {
+          "strategy_name": "ema_atr_crossover",
+          "params": {
+            "fast_ema": 8,
+            "slow_ema": 34,
+            "atr_min_threshold": 0.3,
+            "cooldown_bars": 8
+          },
+          "datasets_evaluated": 9,
+          "datasets_qualified": 1,
+          "datasets_profitable": 2,
+          "datasets_tradable": 9,
+          "avg_return": -0.0542,
+          "avg_sharpe": -2.0706,
+          "avg_alpha": 0.2721,
+          "max_drawdown": 0.1437,
+          "avg_profit_factor": Infinity,
+          "total_trades": 193,
+          "consistency_score": 0.2222,
+          "pass_rate": 0.1111,
+          "avg_oos_return": -0.0029,
+          "avg_degradation": 0.635,
+          "robustness_score": 0.2707,
+          "all_qualified": false,
+          "approved_datasets": [
+            {
+              "symbol": "BTCUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Trades 1 < min 5"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -8.49% < min 0.00%",
+                "Sharpe -3.29 < min 0.00",
+                "Profit factor 0.39 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -9.26% < min 0.00%",
+                "Sharpe -6.27 < min 0.00",
+                "Profit factor 0.30 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "15m",
+              "approved": true,
+              "reasons": [
+                "approved"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -11.94% < min 0.00%",
+                "Sharpe -3.34 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -3.56% < min 0.00%",
+                "Sharpe -1.45 < min 0.00",
+                "Profit factor 0.72 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -2.93% < min 0.00%",
+                "Sharpe -1.72 < min 0.00",
+                "Profit factor 0.37 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -3.71% < min 0.00%",
+                "Sharpe -1.40 < min 0.00",
+                "Profit factor 0.57 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -12.15% < min 0.00%",
+                "Sharpe -5.13 < min 0.00",
+                "Profit factor 0.64 < min 0.80"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "strategy": "rsi_mean_reversion",
+      "total_sets": 16,
+      "evaluated": 16,
+      "top_5": [
+        {
+          "strategy_name": "rsi_mean_reversion",
+          "params": {
+            "rsi_period": 10,
+            "oversold": 25,
+            "overbought": 75,
+            "cooldown_bars": 8
+          },
+          "datasets_evaluated": 9,
+          "datasets_qualified": 1,
+          "datasets_profitable": 1,
+          "datasets_tradable": 9,
+          "avg_return": -0.0359,
+          "avg_sharpe": -1.6122,
+          "avg_alpha": 0.2904,
+          "max_drawdown": 0.098,
+          "avg_profit_factor": 0.745,
+          "total_trades": 211,
+          "consistency_score": 0.1111,
+          "pass_rate": 0.1111,
+          "avg_oos_return": 0.0014,
+          "avg_degradation": 1.0972,
+          "robustness_score": 0.277,
+          "all_qualified": false,
+          "approved_datasets": [
+            {
+              "symbol": "BTCUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -5.31% < min 0.00%",
+                "Sharpe -2.34 < min 0.00",
+                "Profit factor 0.38 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -7.74% < min 0.00%",
+                "Sharpe -2.32 < min 0.00",
+                "Profit factor 0.70 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -2.08% < min 0.00%",
+                "Sharpe -1.83 < min 0.00",
+                "Profit factor 0.55 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -0.13% < min 0.00%",
+                "Sharpe -0.01 < min 0.00",
+                "Profit factor 0.59 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "1h",
+              "approved": true,
+              "reasons": [
+                "approved"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -2.99% < min 0.00%",
+                "Sharpe -2.74 < min 0.00",
+                "Profit factor 0.38 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -7.58% < min 0.00%",
+                "Sharpe -2.18 < min 0.00",
+                "Profit factor 0.63 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -7.33% < min 0.00%",
+                "Sharpe -2.03 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -2.45% < min 0.00%",
+                "Sharpe -1.81 < min 0.00"
+              ]
+            }
+          ]
+        },
+        {
+          "strategy_name": "rsi_mean_reversion",
+          "params": {
+            "rsi_period": 10,
+            "oversold": 30,
+            "overbought": 75,
+            "cooldown_bars": 8
+          },
+          "datasets_evaluated": 9,
+          "datasets_qualified": 1,
+          "datasets_profitable": 1,
+          "datasets_tradable": 9,
+          "avg_return": -0.0361,
+          "avg_sharpe": -1.725,
+          "avg_alpha": 0.2902,
+          "max_drawdown": 0.113,
+          "avg_profit_factor": 0.8236,
+          "total_trades": 246,
+          "consistency_score": 0.1111,
+          "pass_rate": 0.1111,
+          "avg_oos_return": 0.0002,
+          "avg_degradation": 1.2527,
+          "robustness_score": 0.2769,
+          "all_qualified": false,
+          "approved_datasets": [
+            {
+              "symbol": "BTCUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -1.03% < min 0.00%",
+                "Sharpe -0.36 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -5.04% < min 0.00%",
+                "Sharpe -1.46 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -7.69% < min 0.00%",
+                "Sharpe -6.17 < min 0.00",
+                "Profit factor 0.23 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -8.99% < min 0.00%",
+                "Sharpe -2.58 < min 0.00",
+                "Profit factor 0.40 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "1h",
+              "approved": true,
+              "reasons": [
+                "approved"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -2.60% < min 0.00%",
+                "Sharpe -1.88 < min 0.00",
+                "Profit factor 0.57 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -8.28% < min 0.00%",
+                "Sharpe -2.42 < min 0.00",
+                "Profit factor 0.46 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -6.96% < min 0.00%",
+                "Sharpe -1.85 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -1.07% < min 0.00%",
+                "Sharpe -0.77 < min 0.00"
+              ]
+            }
+          ]
+        },
+        {
+          "strategy_name": "rsi_mean_reversion",
+          "params": {
+            "rsi_period": 10,
+            "oversold": 30,
+            "overbought": 75,
+            "cooldown_bars": 5
+          },
+          "datasets_evaluated": 9,
+          "datasets_qualified": 1,
+          "datasets_profitable": 1,
+          "datasets_tradable": 9,
+          "avg_return": -0.0382,
+          "avg_sharpe": -1.7829,
+          "avg_alpha": 0.2881,
+          "max_drawdown": 0.113,
+          "avg_profit_factor": 0.8058,
+          "total_trades": 250,
+          "consistency_score": 0.1111,
+          "pass_rate": 0.1111,
+          "avg_oos_return": -0.0005,
+          "avg_degradation": 1.2704,
+          "robustness_score": 0.2765,
+          "all_qualified": false,
+          "approved_datasets": [
+            {
+              "symbol": "BTCUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -1.03% < min 0.00%",
+                "Sharpe -0.36 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -6.36% < min 0.00%",
+                "Sharpe -1.82 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -7.69% < min 0.00%",
+                "Sharpe -6.17 < min 0.00",
+                "Profit factor 0.23 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -8.99% < min 0.00%",
+                "Sharpe -2.58 < min 0.00",
+                "Profit factor 0.40 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "1h",
+              "approved": true,
+              "reasons": [
+                "approved"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -2.65% < min 0.00%",
+                "Sharpe -1.89 < min 0.00",
+                "Profit factor 0.51 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -7.86% < min 0.00%",
+                "Sharpe -2.30 < min 0.00",
+                "Profit factor 0.48 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -7.90% < min 0.00%",
+                "Sharpe -2.11 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -1.07% < min 0.00%",
+                "Sharpe -0.77 < min 0.00"
+              ]
+            }
+          ]
+        },
+        {
+          "strategy_name": "rsi_mean_reversion",
+          "params": {
+            "rsi_period": 14,
+            "oversold": 25,
+            "overbought": 75,
+            "cooldown_bars": 5
+          },
+          "datasets_evaluated": 9,
+          "datasets_qualified": 2,
+          "datasets_profitable": 2,
+          "datasets_tradable": 9,
+          "avg_return": -0.029,
+          "avg_sharpe": -1.4791,
+          "avg_alpha": 0.2972,
+          "max_drawdown": 0.1059,
+          "avg_profit_factor": 0.6413,
+          "total_trades": 92,
+          "consistency_score": 0.2222,
+          "pass_rate": 0.2222,
+          "avg_oos_return": -0.006,
+          "avg_degradation": 0.5585,
+          "robustness_score": 0.2585,
+          "all_qualified": false,
+          "approved_datasets": [
+            {
+              "symbol": "BTCUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -4.00% < min 0.00%",
+                "Sharpe -2.27 < min 0.00",
+                "Profit factor 0.47 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -9.74% < min 0.00%",
+                "Sharpe -3.78 < min 0.00",
+                "Profit factor 0.17 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -0.82% < min 0.00%",
+                "Sharpe -1.25 < min 0.00",
+                "Trades 4 < min 5",
+                "Profit factor 0.16 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -5.19% < min 0.00%",
+                "Sharpe -2.10 < min 0.00",
+                "Profit factor 0.52 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -5.87% < min 0.00%",
+                "Sharpe -2.12 < min 0.00",
+                "Profit factor 0.57 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "4h",
+              "approved": true,
+              "reasons": [
+                "approved"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -3.52% < min 0.00%",
+                "Sharpe -1.88 < min 0.00",
+                "Profit factor 0.25 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "1h",
+              "approved": true,
+              "reasons": [
+                "approved"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -1.45% < min 0.00%",
+                "Sharpe -2.77 < min 0.00",
+                "Trades 2 < min 5"
+              ]
+            }
+          ]
+        },
+        {
+          "strategy_name": "rsi_mean_reversion",
+          "params": {
+            "rsi_period": 14,
+            "oversold": 25,
+            "overbought": 75,
+            "cooldown_bars": 8
+          },
+          "datasets_evaluated": 9,
+          "datasets_qualified": 2,
+          "datasets_profitable": 2,
+          "datasets_tradable": 9,
+          "avg_return": -0.029,
+          "avg_sharpe": -1.4791,
+          "avg_alpha": 0.2972,
+          "max_drawdown": 0.1059,
+          "avg_profit_factor": 0.6413,
+          "total_trades": 92,
+          "consistency_score": 0.2222,
+          "pass_rate": 0.2222,
+          "avg_oos_return": -0.006,
+          "avg_degradation": 0.5585,
+          "robustness_score": 0.2585,
+          "all_qualified": false,
+          "approved_datasets": [
+            {
+              "symbol": "BTCUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -4.00% < min 0.00%",
+                "Sharpe -2.27 < min 0.00",
+                "Profit factor 0.47 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -9.74% < min 0.00%",
+                "Sharpe -3.78 < min 0.00",
+                "Profit factor 0.17 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -0.82% < min 0.00%",
+                "Sharpe -1.25 < min 0.00",
+                "Trades 4 < min 5",
+                "Profit factor 0.16 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -5.19% < min 0.00%",
+                "Sharpe -2.10 < min 0.00",
+                "Profit factor 0.52 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -5.87% < min 0.00%",
+                "Sharpe -2.12 < min 0.00",
+                "Profit factor 0.57 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "4h",
+              "approved": true,
+              "reasons": [
+                "approved"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -3.52% < min 0.00%",
+                "Sharpe -1.88 < min 0.00",
+                "Profit factor 0.25 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "1h",
+              "approved": true,
+              "reasons": [
+                "approved"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -1.45% < min 0.00%",
+                "Sharpe -2.77 < min 0.00",
+                "Trades 2 < min 5"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "strategy": "bollinger_mean_reversion",
+      "total_sets": 8,
+      "evaluated": 8,
+      "top_5": [
+        {
+          "strategy_name": "bollinger_mean_reversion",
+          "params": {
+            "bb_period": 30,
+            "bb_std_dev": 2.5,
+            "cooldown_bars": 6
+          },
+          "datasets_evaluated": 9,
+          "datasets_qualified": 5,
+          "datasets_profitable": 5,
+          "datasets_tradable": 9,
+          "avg_return": -0.0055,
+          "avg_sharpe": -0.09,
+          "avg_alpha": 0.3208,
+          "max_drawdown": 0.1039,
+          "avg_profit_factor": 0.9249,
+          "total_trades": 211,
+          "consistency_score": 0.5556,
+          "pass_rate": 0.5556,
+          "avg_oos_return": 0.0036,
+          "avg_degradation": 6.6893,
+          "robustness_score": 0.4151,
+          "all_qualified": false,
+          "approved_datasets": [
+            {
+              "symbol": "BTCUSDT",
+              "interval": "15m",
+              "approved": true,
+              "reasons": [
+                "approved"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -3.69% < min 0.00%",
+                "Sharpe -1.52 < min 0.00",
+                "Profit factor 0.53 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -0.38% < min 0.00%",
+                "Sharpe -0.17 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "15m",
+              "approved": true,
+              "reasons": [
+                "approved"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -9.39% < min 0.00%",
+                "Sharpe -2.86 < min 0.00",
+                "Profit factor 0.30 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "4h",
+              "approved": true,
+              "reasons": [
+                "approved"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "15m",
+              "approved": true,
+              "reasons": [
+                "approved"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -2.20% < min 0.00%",
+                "Sharpe -0.92 < min 0.00",
+                "Profit factor 0.79 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "4h",
+              "approved": true,
+              "reasons": [
+                "approved"
+              ]
+            }
+          ]
+        },
+        {
+          "strategy_name": "bollinger_mean_reversion",
+          "params": {
+            "bb_period": 30,
+            "bb_std_dev": 2.0,
+            "cooldown_bars": 6
+          },
+          "datasets_evaluated": 9,
+          "datasets_qualified": 4,
+          "datasets_profitable": 4,
+          "datasets_tradable": 9,
+          "avg_return": -0.0046,
+          "avg_sharpe": -0.1888,
+          "avg_alpha": 0.3217,
+          "max_drawdown": 0.1517,
+          "avg_profit_factor": 0.9086,
+          "total_trades": 429,
+          "consistency_score": 0.4444,
+          "pass_rate": 0.4444,
+          "avg_oos_return": 0.0001,
+          "avg_degradation": 15.3228,
+          "robustness_score": 0.3816,
+          "all_qualified": false,
+          "approved_datasets": [
+            {
+              "symbol": "BTCUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -7.65% < min 0.00%",
+                "Sharpe -5.22 < min 0.00",
+                "Profit factor 0.16 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -12.28% < min 0.00%",
+                "Sharpe -3.40 < min 0.00",
+                "Profit factor 0.45 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "4h",
+              "approved": true,
+              "reasons": [
+                "approved"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -0.74% < min 0.00%",
+                "Sharpe -0.25 < min 0.00",
+                "Profit factor 0.51 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -2.31% < min 0.00%",
+                "Sharpe -0.37 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "4h",
+              "approved": true,
+              "reasons": [
+                "approved"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -0.79% < min 0.00%",
+                "Sharpe -0.30 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "1h",
+              "approved": true,
+              "reasons": [
+                "approved"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "4h",
+              "approved": true,
+              "reasons": [
+                "approved"
+              ]
+            }
+          ]
+        },
+        {
+          "strategy_name": "bollinger_mean_reversion",
+          "params": {
+            "bb_period": 30,
+            "bb_std_dev": 2.0,
+            "cooldown_bars": 10
+          },
+          "datasets_evaluated": 9,
+          "datasets_qualified": 4,
+          "datasets_profitable": 4,
+          "datasets_tradable": 9,
+          "avg_return": -0.0106,
+          "avg_sharpe": -0.391,
+          "avg_alpha": 0.3157,
+          "max_drawdown": 0.1386,
+          "avg_profit_factor": 0.8424,
+          "total_trades": 405,
+          "consistency_score": 0.4444,
+          "pass_rate": 0.4444,
+          "avg_oos_return": 0.0006,
+          "avg_degradation": 1.0369,
+          "robustness_score": 0.3807,
+          "all_qualified": false,
+          "approved_datasets": [
+            {
+              "symbol": "BTCUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -7.04% < min 0.00%",
+                "Sharpe -4.97 < min 0.00",
+                "Profit factor 0.14 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -10.89% < min 0.00%",
+                "Sharpe -3.20 < min 0.00",
+                "Profit factor 0.45 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "4h",
+              "approved": true,
+              "reasons": [
+                "approved"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -0.10% < min 0.00%",
+                "Sharpe -0.01 < min 0.00",
+                "Profit factor 0.55 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -4.62% < min 0.00%",
+                "Sharpe -0.89 < min 0.00",
+                "Profit factor 0.76 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "4h",
+              "approved": true,
+              "reasons": [
+                "approved"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -0.59% < min 0.00%",
+                "Sharpe -0.22 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "1h",
+              "approved": true,
+              "reasons": [
+                "approved"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "4h",
+              "approved": true,
+              "reasons": [
+                "approved"
+              ]
+            }
+          ]
+        },
+        {
+          "strategy_name": "bollinger_mean_reversion",
+          "params": {
+            "bb_period": 20,
+            "bb_std_dev": 2.5,
+            "cooldown_bars": 6
+          },
+          "datasets_evaluated": 9,
+          "datasets_qualified": 3,
+          "datasets_profitable": 3,
+          "datasets_tradable": 9,
+          "avg_return": -0.0096,
+          "avg_sharpe": -1.1524,
+          "avg_alpha": 0.3167,
+          "max_drawdown": 0.0592,
+          "avg_profit_factor": 0.953,
+          "total_trades": 118,
+          "consistency_score": 0.3333,
+          "pass_rate": 0.3333,
+          "avg_oos_return": 0.0002,
+          "avg_degradation": 24.4373,
+          "robustness_score": 0.3475,
+          "all_qualified": false,
+          "approved_datasets": [
+            {
+              "symbol": "BTCUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -0.29% < min 0.00%",
+                "Sharpe -0.27 < min 0.00",
+                "Profit factor 0.73 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -3.20% < min 0.00%",
+                "Sharpe -1.94 < min 0.00",
+                "Profit factor 0.63 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -4.00% < min 0.00%",
+                "Sharpe -6.10 < min 0.00",
+                "Profit factor 0.24 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "15m",
+              "approved": true,
+              "reasons": [
+                "approved"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -4.78% < min 0.00%",
+                "Sharpe -2.00 < min 0.00",
+                "Profit factor 0.51 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -2.95% < min 0.00%",
+                "Sharpe -2.84 < min 0.00",
+                "Profit factor 0.43 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "15m",
+              "approved": true,
+              "reasons": [
+                "approved"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -4.12% < min 0.00%",
+                "Sharpe -1.98 < min 0.00",
+                "Profit factor 0.63 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "4h",
+              "approved": true,
+              "reasons": [
+                "approved"
+              ]
+            }
+          ]
+        },
+        {
+          "strategy_name": "bollinger_mean_reversion",
+          "params": {
+            "bb_period": 20,
+            "bb_std_dev": 2.5,
+            "cooldown_bars": 10
+          },
+          "datasets_evaluated": 9,
+          "datasets_qualified": 3,
+          "datasets_profitable": 3,
+          "datasets_tradable": 9,
+          "avg_return": -0.0096,
+          "avg_sharpe": -1.1524,
+          "avg_alpha": 0.3167,
+          "max_drawdown": 0.0592,
+          "avg_profit_factor": 0.953,
+          "total_trades": 118,
+          "consistency_score": 0.3333,
+          "pass_rate": 0.3333,
+          "avg_oos_return": 0.0002,
+          "avg_degradation": 24.4373,
+          "robustness_score": 0.3475,
+          "all_qualified": false,
+          "approved_datasets": [
+            {
+              "symbol": "BTCUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -0.29% < min 0.00%",
+                "Sharpe -0.27 < min 0.00",
+                "Profit factor 0.73 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -3.20% < min 0.00%",
+                "Sharpe -1.94 < min 0.00",
+                "Profit factor 0.63 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -4.00% < min 0.00%",
+                "Sharpe -6.10 < min 0.00",
+                "Profit factor 0.24 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "15m",
+              "approved": true,
+              "reasons": [
+                "approved"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -4.78% < min 0.00%",
+                "Sharpe -2.00 < min 0.00",
+                "Profit factor 0.51 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -2.95% < min 0.00%",
+                "Sharpe -2.84 < min 0.00",
+                "Profit factor 0.43 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "15m",
+              "approved": true,
+              "reasons": [
+                "approved"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -4.12% < min 0.00%",
+                "Sharpe -1.98 < min 0.00",
+                "Profit factor 0.63 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "4h",
+              "approved": true,
+              "reasons": [
+                "approved"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "strategy": "breakout",
+      "total_sets": 16,
+      "evaluated": 16,
+      "top_5": [
+        {
+          "strategy_name": "breakout",
+          "params": {
+            "lookback_period": 20,
+            "volume_mult": 2.0,
+            "cooldown_bars": 8,
+            "min_breakout_atr": 0.5
+          },
+          "datasets_evaluated": 9,
+          "datasets_qualified": 2,
+          "datasets_profitable": 2,
+          "datasets_tradable": 9,
+          "avg_return": -0.0451,
+          "avg_sharpe": -2.1858,
+          "avg_alpha": 0.2812,
+          "max_drawdown": 0.1276,
+          "avg_profit_factor": 0.8796,
+          "total_trades": 495,
+          "consistency_score": 0.2222,
+          "pass_rate": 0.2222,
+          "avg_oos_return": -0.0054,
+          "avg_degradation": 3.2477,
+          "robustness_score": 0.3083,
+          "all_qualified": false,
+          "approved_datasets": [
+            {
+              "symbol": "BTCUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -3.74% < min 0.00%",
+                "Sharpe -3.53 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -3.87% < min 0.00%",
+                "Sharpe -1.14 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -5.54% < min 0.00%",
+                "Sharpe -3.39 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -6.02% < min 0.00%",
+                "Sharpe -3.15 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "1h",
+              "approved": true,
+              "reasons": [
+                "approved"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "4h",
+              "approved": true,
+              "reasons": [
+                "approved"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -9.48% < min 0.00%",
+                "Sharpe -4.25 < min 0.00",
+                "Profit factor 0.49 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -9.24% < min 0.00%",
+                "Sharpe -2.34 < min 0.00",
+                "Profit factor 0.70 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -4.34% < min 0.00%",
+                "Sharpe -2.55 < min 0.00",
+                "Profit factor 0.49 < min 0.80"
+              ]
+            }
+          ]
+        },
+        {
+          "strategy_name": "breakout",
+          "params": {
+            "lookback_period": 15,
+            "volume_mult": 2.0,
+            "cooldown_bars": 8,
+            "min_breakout_atr": 0.3
+          },
+          "datasets_evaluated": 9,
+          "datasets_qualified": 1,
+          "datasets_profitable": 2,
+          "datasets_tradable": 9,
+          "avg_return": -0.0409,
+          "avg_sharpe": -1.7315,
+          "avg_alpha": 0.2853,
+          "max_drawdown": 0.1324,
+          "avg_profit_factor": 0.8616,
+          "total_trades": 626,
+          "consistency_score": 0.2222,
+          "pass_rate": 0.1111,
+          "avg_oos_return": -0.0018,
+          "avg_degradation": 0.9706,
+          "robustness_score": 0.3063,
+          "all_qualified": false,
+          "approved_datasets": [
+            {
+              "symbol": "BTCUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -4.47% < min 0.00%",
+                "Sharpe -3.85 < min 0.00",
+                "Profit factor 0.72 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -4.16% < min 0.00%",
+                "Sharpe -1.19 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -8.78% < min 0.00%",
+                "Sharpe -4.76 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -7.28% < min 0.00%",
+                "Sharpe -3.69 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -7.45% < min 0.00%",
+                "Sharpe -1.52 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "4h",
+              "approved": true,
+              "reasons": [
+                "approved"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -7.49% < min 0.00%",
+                "Sharpe -3.16 < min 0.00",
+                "Profit factor 0.62 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -5.38% < min 0.00%",
+                "Sharpe -1.16 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Profit factor 0.53 < min 0.80"
+              ]
+            }
+          ]
+        },
+        {
+          "strategy_name": "breakout",
+          "params": {
+            "lookback_period": 15,
+            "volume_mult": 2.0,
+            "cooldown_bars": 5,
+            "min_breakout_atr": 0.3
+          },
+          "datasets_evaluated": 9,
+          "datasets_qualified": 2,
+          "datasets_profitable": 2,
+          "datasets_tradable": 9,
+          "avg_return": -0.0391,
+          "avg_sharpe": -1.6336,
+          "avg_alpha": 0.2872,
+          "max_drawdown": 0.1586,
+          "avg_profit_factor": 0.9915,
+          "total_trades": 660,
+          "consistency_score": 0.2222,
+          "pass_rate": 0.2222,
+          "avg_oos_return": -0.002,
+          "avg_degradation": 0.8877,
+          "robustness_score": 0.2983,
+          "all_qualified": false,
+          "approved_datasets": [
+            {
+              "symbol": "BTCUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -4.52% < min 0.00%",
+                "Sharpe -3.89 < min 0.00",
+                "Profit factor 0.68 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -5.19% < min 0.00%",
+                "Sharpe -1.40 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -8.78% < min 0.00%",
+                "Sharpe -4.77 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -7.51% < min 0.00%",
+                "Sharpe -3.75 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -9.59% < min 0.00%",
+                "Sharpe -1.87 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "4h",
+              "approved": true,
+              "reasons": [
+                "approved"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -6.52% < min 0.00%",
+                "Sharpe -2.63 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -1.21% < min 0.00%",
+                "Sharpe -0.19 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "4h",
+              "approved": true,
+              "reasons": [
+                "approved"
+              ]
+            }
+          ]
+        },
+        {
+          "strategy_name": "breakout",
+          "params": {
+            "lookback_period": 20,
+            "volume_mult": 2.0,
+            "cooldown_bars": 5,
+            "min_breakout_atr": 0.5
+          },
+          "datasets_evaluated": 9,
+          "datasets_qualified": 1,
+          "datasets_profitable": 1,
+          "datasets_tradable": 9,
+          "avg_return": -0.0466,
+          "avg_sharpe": -2.1377,
+          "avg_alpha": 0.2797,
+          "max_drawdown": 0.1269,
+          "avg_profit_factor": 0.9311,
+          "total_trades": 523,
+          "consistency_score": 0.1111,
+          "pass_rate": 0.1111,
+          "avg_oos_return": -0.0051,
+          "avg_degradation": 2.6721,
+          "robustness_score": 0.2748,
+          "all_qualified": false,
+          "approved_datasets": [
+            {
+              "symbol": "BTCUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -3.79% < min 0.00%",
+                "Sharpe -3.58 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -4.92% < min 0.00%",
+                "Sharpe -1.37 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -5.58% < min 0.00%",
+                "Sharpe -3.40 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -6.21% < min 0.00%",
+                "Sharpe -3.18 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -0.21% < min 0.00%",
+                "Sharpe -0.00 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "4h",
+              "approved": true,
+              "reasons": [
+                "approved"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -8.53% < min 0.00%",
+                "Sharpe -3.62 < min 0.00",
+                "Profit factor 0.67 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -9.16% < min 0.00%",
+                "Sharpe -2.01 < min 0.00",
+                "Profit factor 0.77 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -4.38% < min 0.00%",
+                "Sharpe -2.52 < min 0.00"
+              ]
+            }
+          ]
+        },
+        {
+          "strategy_name": "breakout",
+          "params": {
+            "lookback_period": 20,
+            "volume_mult": 1.5,
+            "cooldown_bars": 5,
+            "min_breakout_atr": 0.3
+          },
+          "datasets_evaluated": 9,
+          "datasets_qualified": 1,
+          "datasets_profitable": 1,
+          "datasets_tradable": 9,
+          "avg_return": -0.0714,
+          "avg_sharpe": -2.6455,
+          "avg_alpha": 0.2549,
+          "max_drawdown": 0.1823,
+          "avg_profit_factor": 0.8413,
+          "total_trades": 737,
+          "consistency_score": 0.1111,
+          "pass_rate": 0.1111,
+          "avg_oos_return": -0.0065,
+          "avg_degradation": 3.0478,
+          "robustness_score": 0.2709,
+          "all_qualified": false,
+          "approved_datasets": [
+            {
+              "symbol": "BTCUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -5.71% < min 0.00%",
+                "Sharpe -4.25 < min 0.00",
+                "Profit factor 0.59 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -12.06% < min 0.00%",
+                "Sharpe -3.26 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -8.63% < min 0.00%",
+                "Sharpe -4.55 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -9.03% < min 0.00%",
+                "Sharpe -3.75 < min 0.00",
+                "Profit factor 0.80 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -5.88% < min 0.00%",
+                "Sharpe -1.04 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "4h",
+              "approved": true,
+              "reasons": [
+                "approved"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -11.45% < min 0.00%",
+                "Sharpe -4.14 < min 0.00",
+                "Profit factor 0.69 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -10.98% < min 0.00%",
+                "Sharpe -2.20 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -6.02% < min 0.00%",
+                "Sharpe -2.83 < min 0.00",
+                "Profit factor 0.67 < min 0.80"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "strategy": "regime_adaptive",
+      "total_sets": 32,
+      "evaluated": 32,
+      "top_5": [
+        {
+          "strategy_name": "regime_adaptive",
+          "params": {
+            "adx_trend_threshold": 20,
+            "adx_range_threshold": 15,
+            "rsi_oversold": 25,
+            "rsi_overbought": 75,
+            "cooldown_bars": 5
+          },
+          "datasets_evaluated": 9,
+          "datasets_qualified": 0,
+          "datasets_profitable": 0,
+          "datasets_tradable": 9,
+          "avg_return": -0.0822,
+          "avg_sharpe": -3.8013,
+          "avg_alpha": 0.2441,
+          "max_drawdown": 0.1541,
+          "avg_profit_factor": 0.5559,
+          "total_trades": 491,
+          "consistency_score": 0.0,
+          "pass_rate": 0.0,
+          "avg_oos_return": -0.0078,
+          "avg_degradation": 1.5416,
+          "robustness_score": 0.2358,
+          "all_qualified": false,
+          "approved_datasets": [
+            {
+              "symbol": "BTCUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -7.51% < min 0.00%",
+                "Sharpe -6.32 < min 0.00",
+                "Profit factor 0.34 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -13.87% < min 0.00%",
+                "Sharpe -4.59 < min 0.00",
+                "Profit factor 0.41 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -10.97% < min 0.00%",
+                "Sharpe -6.86 < min 0.00",
+                "Profit factor 0.55 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -1.22% < min 0.00%",
+                "Sharpe -0.58 < min 0.00",
+                "Profit factor 0.77 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -10.84% < min 0.00%",
+                "Sharpe -2.88 < min 0.00",
+                "Profit factor 0.69 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -8.00% < min 0.00%",
+                "Sharpe -4.35 < min 0.00",
+                "Profit factor 0.71 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -9.84% < min 0.00%",
+                "Sharpe -4.26 < min 0.00",
+                "Profit factor 0.39 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -6.61% < min 0.00%",
+                "Sharpe -1.98 < min 0.00",
+                "Profit factor 0.72 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -5.13% < min 0.00%",
+                "Sharpe -2.38 < min 0.00",
+                "Profit factor 0.42 < min 0.80"
+              ]
+            }
+          ]
+        },
+        {
+          "strategy_name": "regime_adaptive",
+          "params": {
+            "adx_trend_threshold": 25,
+            "adx_range_threshold": 15,
+            "rsi_oversold": 25,
+            "rsi_overbought": 75,
+            "cooldown_bars": 5
+          },
+          "datasets_evaluated": 9,
+          "datasets_qualified": 0,
+          "datasets_profitable": 0,
+          "datasets_tradable": 9,
+          "avg_return": -0.0813,
+          "avg_sharpe": -3.6459,
+          "avg_alpha": 0.2449,
+          "max_drawdown": 0.1575,
+          "avg_profit_factor": 0.5798,
+          "total_trades": 480,
+          "consistency_score": 0.0,
+          "pass_rate": 0.0,
+          "avg_oos_return": -0.008,
+          "avg_degradation": 0.9241,
+          "robustness_score": 0.2283,
+          "all_qualified": false,
+          "approved_datasets": [
+            {
+              "symbol": "BTCUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -5.89% < min 0.00%",
+                "Sharpe -5.02 < min 0.00",
+                "Profit factor 0.43 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -14.21% < min 0.00%",
+                "Sharpe -4.76 < min 0.00",
+                "Profit factor 0.42 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -9.63% < min 0.00%",
+                "Sharpe -6.11 < min 0.00",
+                "Profit factor 0.60 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -1.90% < min 0.00%",
+                "Sharpe -0.93 < min 0.00",
+                "Profit factor 0.73 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -11.90% < min 0.00%",
+                "Sharpe -3.17 < min 0.00",
+                "Profit factor 0.70 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -8.05% < min 0.00%",
+                "Sharpe -4.20 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -9.62% < min 0.00%",
+                "Sharpe -4.16 < min 0.00",
+                "Profit factor 0.40 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -6.94% < min 0.00%",
+                "Sharpe -2.10 < min 0.00",
+                "Profit factor 0.68 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -5.08% < min 0.00%",
+                "Sharpe -2.37 < min 0.00",
+                "Profit factor 0.44 < min 0.80"
+              ]
+            }
+          ]
+        },
+        {
+          "strategy_name": "regime_adaptive",
+          "params": {
+            "adx_trend_threshold": 25,
+            "adx_range_threshold": 15,
+            "rsi_oversold": 30,
+            "rsi_overbought": 75,
+            "cooldown_bars": 5
+          },
+          "datasets_evaluated": 9,
+          "datasets_qualified": 0,
+          "datasets_profitable": 0,
+          "datasets_tradable": 9,
+          "avg_return": -0.0848,
+          "avg_sharpe": -3.7642,
+          "avg_alpha": 0.2414,
+          "max_drawdown": 0.1627,
+          "avg_profit_factor": 0.5615,
+          "total_trades": 493,
+          "consistency_score": 0.0,
+          "pass_rate": 0.0,
+          "avg_oos_return": -0.0082,
+          "avg_degradation": 0.8973,
+          "robustness_score": 0.2251,
+          "all_qualified": false,
+          "approved_datasets": [
+            {
+              "symbol": "BTCUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -6.48% < min 0.00%",
+                "Sharpe -5.29 < min 0.00",
+                "Profit factor 0.39 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -13.89% < min 0.00%",
+                "Sharpe -4.52 < min 0.00",
+                "Profit factor 0.44 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -9.63% < min 0.00%",
+                "Sharpe -6.25 < min 0.00",
+                "Profit factor 0.49 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -1.93% < min 0.00%",
+                "Sharpe -0.92 < min 0.00",
+                "Profit factor 0.73 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -10.35% < min 0.00%",
+                "Sharpe -2.58 < min 0.00",
+                "Profit factor 0.75 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -8.05% < min 0.00%",
+                "Sharpe -4.20 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -10.85% < min 0.00%",
+                "Sharpe -4.65 < min 0.00",
+                "Profit factor 0.38 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -10.10% < min 0.00%",
+                "Sharpe -3.11 < min 0.00",
+                "Profit factor 0.60 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -5.08% < min 0.00%",
+                "Sharpe -2.37 < min 0.00",
+                "Profit factor 0.44 < min 0.80"
+              ]
+            }
+          ]
+        },
+        {
+          "strategy_name": "regime_adaptive",
+          "params": {
+            "adx_trend_threshold": 25,
+            "adx_range_threshold": 15,
+            "rsi_oversold": 25,
+            "rsi_overbought": 70,
+            "cooldown_bars": 5
+          },
+          "datasets_evaluated": 9,
+          "datasets_qualified": 0,
+          "datasets_profitable": 0,
+          "datasets_tradable": 9,
+          "avg_return": -0.0828,
+          "avg_sharpe": -3.7178,
+          "avg_alpha": 0.2435,
+          "max_drawdown": 0.1585,
+          "avg_profit_factor": 0.6122,
+          "total_trades": 495,
+          "consistency_score": 0.0,
+          "pass_rate": 0.0,
+          "avg_oos_return": -0.0071,
+          "avg_degradation": 0.8231,
+          "robustness_score": 0.2181,
+          "all_qualified": false,
+          "approved_datasets": [
+            {
+              "symbol": "BTCUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -5.93% < min 0.00%",
+                "Sharpe -5.07 < min 0.00",
+                "Profit factor 0.41 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -14.29% < min 0.00%",
+                "Sharpe -4.75 < min 0.00",
+                "Profit factor 0.45 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -9.72% < min 0.00%",
+                "Sharpe -6.09 < min 0.00",
+                "Profit factor 0.62 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -2.00% < min 0.00%",
+                "Sharpe -0.98 < min 0.00",
+                "Profit factor 0.72 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -11.53% < min 0.00%",
+                "Sharpe -3.04 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -8.00% < min 0.00%",
+                "Sharpe -4.35 < min 0.00",
+                "Profit factor 0.71 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -9.99% < min 0.00%",
+                "Sharpe -4.33 < min 0.00",
+                "Profit factor 0.42 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -7.88% < min 0.00%",
+                "Sharpe -2.46 < min 0.00",
+                "Profit factor 0.76 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -5.17% < min 0.00%",
+                "Sharpe -2.40 < min 0.00",
+                "Profit factor 0.61 < min 0.80"
+              ]
+            }
+          ]
+        },
+        {
+          "strategy_name": "regime_adaptive",
+          "params": {
+            "adx_trend_threshold": 25,
+            "adx_range_threshold": 15,
+            "rsi_oversold": 30,
+            "rsi_overbought": 70,
+            "cooldown_bars": 5
+          },
+          "datasets_evaluated": 9,
+          "datasets_qualified": 0,
+          "datasets_profitable": 0,
+          "datasets_tradable": 9,
+          "avg_return": -0.0862,
+          "avg_sharpe": -3.8385,
+          "avg_alpha": 0.24,
+          "max_drawdown": 0.1637,
+          "avg_profit_factor": 0.5937,
+          "total_trades": 508,
+          "consistency_score": 0.0,
+          "pass_rate": 0.0,
+          "avg_oos_return": -0.0073,
+          "avg_degradation": 0.804,
+          "robustness_score": 0.2157,
+          "all_qualified": false,
+          "approved_datasets": [
+            {
+              "symbol": "BTCUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -6.53% < min 0.00%",
+                "Sharpe -5.34 < min 0.00",
+                "Profit factor 0.38 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -13.96% < min 0.00%",
+                "Sharpe -4.52 < min 0.00",
+                "Profit factor 0.47 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -9.73% < min 0.00%",
+                "Sharpe -6.22 < min 0.00",
+                "Profit factor 0.52 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -2.02% < min 0.00%",
+                "Sharpe -0.96 < min 0.00",
+                "Profit factor 0.73 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -9.97% < min 0.00%",
+                "Sharpe -2.46 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -8.00% < min 0.00%",
+                "Sharpe -4.35 < min 0.00",
+                "Profit factor 0.71 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -11.22% < min 0.00%",
+                "Sharpe -4.82 < min 0.00",
+                "Profit factor 0.40 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -11.01% < min 0.00%",
+                "Sharpe -3.48 < min 0.00",
+                "Profit factor 0.67 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -5.17% < min 0.00%",
+                "Sharpe -2.40 < min 0.00",
+                "Profit factor 0.61 < min 0.80"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "strategy": "momentum_continuation",
+      "total_sets": 16,
+      "evaluated": 16,
+      "top_5": [
+        {
+          "strategy_name": "momentum_continuation",
+          "params": {
+            "sma_period": 15,
+            "adx_threshold": 25,
+            "roc_period": 8,
+            "cooldown_bars": 8
+          },
+          "datasets_evaluated": 9,
+          "datasets_qualified": 3,
+          "datasets_profitable": 3,
+          "datasets_tradable": 9,
+          "avg_return": -0.047,
+          "avg_sharpe": -0.76,
+          "avg_alpha": 0.2793,
+          "max_drawdown": 0.1725,
+          "avg_profit_factor": 1.2143,
+          "total_trades": 675,
+          "consistency_score": 0.3333,
+          "pass_rate": 0.3333,
+          "avg_oos_return": -0.0036,
+          "avg_degradation": -1.5145,
+          "robustness_score": 0.2415,
+          "all_qualified": false,
+          "approved_datasets": [
+            {
+              "symbol": "BTCUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -7.82% < min 0.00%",
+                "Sharpe -2.48 < min 0.00",
+                "Profit factor 0.57 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -7.19% < min 0.00%",
+                "Sharpe -0.85 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "4h",
+              "approved": true,
+              "reasons": [
+                "approved"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -3.75% < min 0.00%",
+                "Sharpe -0.74 < min 0.00",
+                "Profit factor 0.80 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -3.62% < min 0.00%",
+                "Sharpe -0.37 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "4h",
+              "approved": true,
+              "reasons": [
+                "approved"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -13.29% < min 0.00%",
+                "Sharpe -1.98 < min 0.00",
+                "Profit factor 0.45 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -9.77% < min 0.00%",
+                "Sharpe -1.09 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "4h",
+              "approved": true,
+              "reasons": [
+                "approved"
+              ]
+            }
+          ]
+        },
+        {
+          "strategy_name": "momentum_continuation",
+          "params": {
+            "sma_period": 20,
+            "adx_threshold": 20,
+            "roc_period": 8,
+            "cooldown_bars": 5
+          },
+          "datasets_evaluated": 9,
+          "datasets_qualified": 0,
+          "datasets_profitable": 0,
+          "datasets_tradable": 9,
+          "avg_return": -0.0947,
+          "avg_sharpe": -1.6826,
+          "avg_alpha": 0.2315,
+          "max_drawdown": 0.1978,
+          "avg_profit_factor": 1.0017,
+          "total_trades": 942,
+          "consistency_score": 0.0,
+          "pass_rate": 0.0,
+          "avg_oos_return": -0.0083,
+          "avg_degradation": 5.6969,
+          "robustness_score": 0.2339,
+          "all_qualified": false,
+          "approved_datasets": [
+            {
+              "symbol": "BTCUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -11.98% < min 0.00%",
+                "Sharpe -3.65 < min 0.00",
+                "Profit factor 0.61 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -8.70% < min 0.00%",
+                "Sharpe -1.14 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -7.59% < min 0.00%",
+                "Sharpe -1.95 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -8.78% < min 0.00%",
+                "Sharpe -1.63 < min 0.00",
+                "Profit factor 0.73 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -10.25% < min 0.00%",
+                "Sharpe -1.01 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -9.92% < min 0.00%",
+                "Sharpe -1.79 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -16.56% < min 0.00%",
+                "Sharpe -2.42 < min 0.00",
+                "Profit factor 0.62 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -9.24% < min 0.00%",
+                "Sharpe -1.09 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -2.22% < min 0.00%",
+                "Sharpe -0.47 < min 0.00"
+              ]
+            }
+          ]
+        },
+        {
+          "strategy_name": "momentum_continuation",
+          "params": {
+            "sma_period": 20,
+            "adx_threshold": 20,
+            "roc_period": 8,
+            "cooldown_bars": 8
+          },
+          "datasets_evaluated": 9,
+          "datasets_qualified": 1,
+          "datasets_profitable": 1,
+          "datasets_tradable": 9,
+          "avg_return": -0.0571,
+          "avg_sharpe": -1.014,
+          "avg_alpha": 0.2692,
+          "max_drawdown": 0.1539,
+          "avg_profit_factor": 1.2094,
+          "total_trades": 772,
+          "consistency_score": 0.1111,
+          "pass_rate": 0.1111,
+          "avg_oos_return": -0.0115,
+          "avg_degradation": 0.542,
+          "robustness_score": 0.2268,
+          "all_qualified": false,
+          "approved_datasets": [
+            {
+              "symbol": "BTCUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -10.19% < min 0.00%",
+                "Sharpe -3.37 < min 0.00",
+                "Profit factor 0.49 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -5.37% < min 0.00%",
+                "Sharpe -0.63 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -3.33% < min 0.00%",
+                "Sharpe -0.76 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -8.48% < min 0.00%",
+                "Sharpe -1.59 < min 0.00",
+                "Profit factor 0.64 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -12.81% < min 0.00%",
+                "Sharpe -1.27 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "4h",
+              "approved": true,
+              "reasons": [
+                "approved"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -9.94% < min 0.00%",
+                "Sharpe -1.42 < min 0.00",
+                "Profit factor 0.66 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -1.33% < min 0.00%",
+                "Sharpe -0.19 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -1.44% < min 0.00%",
+                "Sharpe -0.30 < min 0.00"
+              ]
+            }
+          ]
+        },
+        {
+          "strategy_name": "momentum_continuation",
+          "params": {
+            "sma_period": 20,
+            "adx_threshold": 20,
+            "roc_period": 12,
+            "cooldown_bars": 8
+          },
+          "datasets_evaluated": 9,
+          "datasets_qualified": 2,
+          "datasets_profitable": 2,
+          "datasets_tradable": 9,
+          "avg_return": -0.0515,
+          "avg_sharpe": -0.8178,
+          "avg_alpha": 0.2747,
+          "max_drawdown": 0.2056,
+          "avg_profit_factor": 1.1678,
+          "total_trades": 768,
+          "consistency_score": 0.2222,
+          "pass_rate": 0.2222,
+          "avg_oos_return": -0.0156,
+          "avg_degradation": -0.2018,
+          "robustness_score": 0.2063,
+          "all_qualified": false,
+          "approved_datasets": [
+            {
+              "symbol": "BTCUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -9.20% < min 0.00%",
+                "Sharpe -2.81 < min 0.00",
+                "Profit factor 0.55 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -8.04% < min 0.00%",
+                "Sharpe -1.03 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -0.26% < min 0.00%"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -9.46% < min 0.00%",
+                "Sharpe -1.83 < min 0.00",
+                "Profit factor 0.61 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -17.25% < min 0.00%",
+                "Sharpe -1.67 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "4h",
+              "approved": true,
+              "reasons": [
+                "approved"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -7.98% < min 0.00%",
+                "Sharpe -1.15 < min 0.00",
+                "Profit factor 0.70 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "1h",
+              "approved": true,
+              "reasons": [
+                "approved"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -1.32% < min 0.00%",
+                "Sharpe -0.12 < min 0.00"
+              ]
+            }
+          ]
+        },
+        {
+          "strategy_name": "momentum_continuation",
+          "params": {
+            "sma_period": 15,
+            "adx_threshold": 20,
+            "roc_period": 12,
+            "cooldown_bars": 8
+          },
+          "datasets_evaluated": 9,
+          "datasets_qualified": 1,
+          "datasets_profitable": 1,
+          "datasets_tradable": 9,
+          "avg_return": -0.0549,
+          "avg_sharpe": -1.0589,
+          "avg_alpha": 0.2714,
+          "max_drawdown": 0.1575,
+          "avg_profit_factor": 0.9754,
+          "total_trades": 786,
+          "consistency_score": 0.1111,
+          "pass_rate": 0.1111,
+          "avg_oos_return": -0.0076,
+          "avg_degradation": 0.2109,
+          "robustness_score": 0.1944,
+          "all_qualified": false,
+          "approved_datasets": [
+            {
+              "symbol": "BTCUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -10.23% < min 0.00%",
+                "Sharpe -3.15 < min 0.00",
+                "Profit factor 0.50 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -1.00% < min 0.00%",
+                "Sharpe -0.03 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -5.21% < min 0.00%",
+                "Sharpe -1.56 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -9.45% < min 0.00%",
+                "Sharpe -1.97 < min 0.00",
+                "Profit factor 0.54 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -8.33% < min 0.00%",
+                "Sharpe -0.66 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "4h",
+              "approved": true,
+              "reasons": [
+                "approved"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -11.05% < min 0.00%",
+                "Sharpe -1.63 < min 0.00",
+                "Profit factor 0.62 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -3.45% < min 0.00%",
+                "Sharpe -0.35 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -0.97% < min 0.00%",
+                "Sharpe -0.21 < min 0.00"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "strategy": "pullback_uptrend",
+      "total_sets": 16,
+      "evaluated": 16,
+      "top_5": [
+        {
+          "strategy_name": "pullback_uptrend",
+          "params": {
+            "fast_ema": 15,
+            "slow_ema": 50,
+            "rsi_pullback_low": 30,
+            "cooldown_bars": 10
+          },
+          "datasets_evaluated": 9,
+          "datasets_qualified": 1,
+          "datasets_profitable": 1,
+          "datasets_tradable": 9,
+          "avg_return": -0.0568,
+          "avg_sharpe": -1.0287,
+          "avg_alpha": 0.2694,
+          "max_drawdown": 0.1581,
+          "avg_profit_factor": 1.7484,
+          "total_trades": 382,
+          "consistency_score": 0.1111,
+          "pass_rate": 0.1111,
+          "avg_oos_return": -0.0129,
+          "avg_degradation": 0.8044,
+          "robustness_score": 0.2529,
+          "all_qualified": false,
+          "approved_datasets": [
+            {
+              "symbol": "BTCUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -6.87% < min 0.00%",
+                "Sharpe -1.94 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -6.75% < min 0.00%",
+                "Sharpe -0.88 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -3.96% < min 0.00%",
+                "Sharpe -1.01 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -11.41% < min 0.00%",
+                "Sharpe -2.22 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "1h",
+              "approved": true,
+              "reasons": [
+                "approved"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -5.43% < min 0.00%",
+                "Sharpe -0.92 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -8.34% < min 0.00%",
+                "Sharpe -1.29 < min 0.00",
+                "Profit factor 0.72 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -8.97% < min 0.00%",
+                "Sharpe -1.00 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -2.20% < min 0.00%",
+                "Sharpe -0.33 < min 0.00"
+              ]
+            }
+          ]
+        },
+        {
+          "strategy_name": "pullback_uptrend",
+          "params": {
+            "fast_ema": 20,
+            "slow_ema": 50,
+            "rsi_pullback_low": 30,
+            "cooldown_bars": 10
+          },
+          "datasets_evaluated": 9,
+          "datasets_qualified": 1,
+          "datasets_profitable": 1,
+          "datasets_tradable": 9,
+          "avg_return": -0.061,
+          "avg_sharpe": -1.0906,
+          "avg_alpha": 0.2653,
+          "max_drawdown": 0.1601,
+          "avg_profit_factor": 1.668,
+          "total_trades": 386,
+          "consistency_score": 0.1111,
+          "pass_rate": 0.1111,
+          "avg_oos_return": -0.0127,
+          "avg_degradation": 0.807,
+          "robustness_score": 0.2526,
+          "all_qualified": false,
+          "approved_datasets": [
+            {
+              "symbol": "BTCUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -6.81% < min 0.00%",
+                "Sharpe -1.92 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -6.66% < min 0.00%",
+                "Sharpe -0.87 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -3.96% < min 0.00%",
+                "Sharpe -1.01 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -11.24% < min 0.00%",
+                "Sharpe -2.18 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "1h",
+              "approved": true,
+              "reasons": [
+                "approved"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -5.43% < min 0.00%",
+                "Sharpe -0.90 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -8.69% < min 0.00%",
+                "Sharpe -1.35 < min 0.00",
+                "Profit factor 0.70 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -9.72% < min 0.00%",
+                "Sharpe -1.10 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -3.73% < min 0.00%",
+                "Sharpe -0.68 < min 0.00"
+              ]
+            }
+          ]
+        },
+        {
+          "strategy_name": "pullback_uptrend",
+          "params": {
+            "fast_ema": 15,
+            "slow_ema": 40,
+            "rsi_pullback_low": 30,
+            "cooldown_bars": 6
+          },
+          "datasets_evaluated": 9,
+          "datasets_qualified": 0,
+          "datasets_profitable": 0,
+          "datasets_tradable": 9,
+          "avg_return": -0.0679,
+          "avg_sharpe": -1.0839,
+          "avg_alpha": 0.2584,
+          "max_drawdown": 0.1777,
+          "avg_profit_factor": 1.7882,
+          "total_trades": 423,
+          "consistency_score": 0.0,
+          "pass_rate": 0.0,
+          "avg_oos_return": -0.0118,
+          "avg_degradation": 3.7274,
+          "robustness_score": 0.2376,
+          "all_qualified": false,
+          "approved_datasets": [
+            {
+              "symbol": "BTCUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -7.19% < min 0.00%",
+                "Sharpe -2.11 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -8.94% < min 0.00%",
+                "Sharpe -1.17 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -0.94% < min 0.00%",
+                "Sharpe -0.11 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -11.34% < min 0.00%",
+                "Sharpe -2.07 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -0.43% < min 0.00%"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -2.50% < min 0.00%",
+                "Sharpe -0.31 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -10.63% < min 0.00%",
+                "Sharpe -1.61 < min 0.00",
+                "Profit factor 0.73 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -15.25% < min 0.00%",
+                "Sharpe -1.72 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -3.90% < min 0.00%",
+                "Sharpe -0.67 < min 0.00"
+              ]
+            }
+          ]
+        },
+        {
+          "strategy_name": "pullback_uptrend",
+          "params": {
+            "fast_ema": 20,
+            "slow_ema": 40,
+            "rsi_pullback_low": 30,
+            "cooldown_bars": 6
+          },
+          "datasets_evaluated": 9,
+          "datasets_qualified": 0,
+          "datasets_profitable": 0,
+          "datasets_tradable": 9,
+          "avg_return": -0.0686,
+          "avg_sharpe": -1.1101,
+          "avg_alpha": 0.2577,
+          "max_drawdown": 0.1777,
+          "avg_profit_factor": 1.8019,
+          "total_trades": 425,
+          "consistency_score": 0.0,
+          "pass_rate": 0.0,
+          "avg_oos_return": -0.0118,
+          "avg_degradation": 3.5099,
+          "robustness_score": 0.2375,
+          "all_qualified": false,
+          "approved_datasets": [
+            {
+              "symbol": "BTCUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -7.38% < min 0.00%",
+                "Sharpe -2.17 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -8.51% < min 0.00%",
+                "Sharpe -1.16 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -0.94% < min 0.00%",
+                "Sharpe -0.11 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -12.00% < min 0.00%",
+                "Sharpe -2.22 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -0.38% < min 0.00%"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -2.50% < min 0.00%",
+                "Sharpe -0.31 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -10.87% < min 0.00%",
+                "Sharpe -1.65 < min 0.00",
+                "Profit factor 0.71 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -15.24% < min 0.00%",
+                "Sharpe -1.72 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -3.90% < min 0.00%",
+                "Sharpe -0.67 < min 0.00"
+              ]
+            }
+          ]
+        },
+        {
+          "strategy_name": "pullback_uptrend",
+          "params": {
+            "fast_ema": 15,
+            "slow_ema": 50,
+            "rsi_pullback_low": 30,
+            "cooldown_bars": 6
+          },
+          "datasets_evaluated": 9,
+          "datasets_qualified": 1,
+          "datasets_profitable": 1,
+          "datasets_tradable": 9,
+          "avg_return": -0.0683,
+          "avg_sharpe": -1.2187,
+          "avg_alpha": 0.258,
+          "max_drawdown": 0.175,
+          "avg_profit_factor": 1.6438,
+          "total_trades": 451,
+          "consistency_score": 0.1111,
+          "pass_rate": 0.1111,
+          "avg_oos_return": -0.013,
+          "avg_degradation": 0.6639,
+          "robustness_score": 0.2371,
+          "all_qualified": false,
+          "approved_datasets": [
+            {
+              "symbol": "BTCUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -8.73% < min 0.00%",
+                "Sharpe -2.60 < min 0.00",
+                "Profit factor 0.76 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -6.88% < min 0.00%",
+                "Sharpe -0.91 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -1.37% < min 0.00%",
+                "Sharpe -0.23 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -13.19% < min 0.00%",
+                "Sharpe -2.59 < min 0.00",
+                "Profit factor 0.76 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "1h",
+              "approved": true,
+              "reasons": [
+                "approved"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -6.43% < min 0.00%",
+                "Sharpe -1.12 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -9.61% < min 0.00%",
+                "Sharpe -1.48 < min 0.00",
+                "Profit factor 0.74 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -12.92% < min 0.00%",
+                "Sharpe -1.46 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -4.51% < min 0.00%",
+                "Sharpe -0.85 < min 0.00"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "strategy": "volatility_breakout",
+      "total_sets": 16,
+      "evaluated": 16,
+      "top_5": [
+        {
+          "strategy_name": "volatility_breakout",
+          "params": {
+            "keltner_ema": 20,
+            "keltner_atr_mult": 1.5,
+            "trend_ema": 40,
+            "cooldown_bars": 10
+          },
+          "datasets_evaluated": 9,
+          "datasets_qualified": 2,
+          "datasets_profitable": 2,
+          "datasets_tradable": 9,
+          "avg_return": -0.042,
+          "avg_sharpe": -0.5837,
+          "avg_alpha": 0.2843,
+          "max_drawdown": 0.1958,
+          "avg_profit_factor": 1.2787,
+          "total_trades": 454,
+          "consistency_score": 0.2222,
+          "pass_rate": 0.2222,
+          "avg_oos_return": -0.01,
+          "avg_degradation": 1.0865,
+          "robustness_score": 0.3083,
+          "all_qualified": false,
+          "approved_datasets": [
+            {
+              "symbol": "BTCUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -6.73% < min 0.00%",
+                "Sharpe -2.09 < min 0.00",
+                "Profit factor 0.62 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -4.67% < min 0.00%",
+                "Sharpe -0.59 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -0.40% < min 0.00%",
+                "Sharpe -0.03 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -3.95% < min 0.00%",
+                "Sharpe -0.70 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -10.93% < min 0.00%",
+                "Sharpe -1.03 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "4h",
+              "approved": true,
+              "reasons": [
+                "approved"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -4.90% < min 0.00%",
+                "Sharpe -0.63 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -7.16% < min 0.00%",
+                "Sharpe -0.78 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "4h",
+              "approved": true,
+              "reasons": [
+                "approved"
+              ]
+            }
+          ]
+        },
+        {
+          "strategy_name": "volatility_breakout",
+          "params": {
+            "keltner_ema": 20,
+            "keltner_atr_mult": 1.5,
+            "trend_ema": 50,
+            "cooldown_bars": 10
+          },
+          "datasets_evaluated": 9,
+          "datasets_qualified": 2,
+          "datasets_profitable": 2,
+          "datasets_tradable": 9,
+          "avg_return": -0.0451,
+          "avg_sharpe": -0.6215,
+          "avg_alpha": 0.2812,
+          "max_drawdown": 0.2124,
+          "avg_profit_factor": 1.2354,
+          "total_trades": 465,
+          "consistency_score": 0.2222,
+          "pass_rate": 0.2222,
+          "avg_oos_return": -0.0105,
+          "avg_degradation": 0.9469,
+          "robustness_score": 0.3025,
+          "all_qualified": false,
+          "approved_datasets": [
+            {
+              "symbol": "BTCUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -6.58% < min 0.00%",
+                "Sharpe -2.07 < min 0.00",
+                "Profit factor 0.65 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -4.67% < min 0.00%",
+                "Sharpe -0.57 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "4h",
+              "approved": false,
+              "reasons": [
+                "Return -0.40% < min 0.00%",
+                "Sharpe -0.03 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -5.35% < min 0.00%",
+                "Sharpe -0.96 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -12.93% < min 0.00%",
+                "Sharpe -1.26 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "4h",
+              "approved": true,
+              "reasons": [
+                "approved"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -5.19% < min 0.00%",
+                "Sharpe -0.67 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -7.48% < min 0.00%",
+                "Sharpe -0.82 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "4h",
+              "approved": true,
+              "reasons": [
+                "approved"
+              ]
+            }
+          ]
+        },
+        {
+          "strategy_name": "volatility_breakout",
+          "params": {
+            "keltner_ema": 15,
+            "keltner_atr_mult": 1.5,
+            "trend_ema": 50,
+            "cooldown_bars": 6
+          },
+          "datasets_evaluated": 9,
+          "datasets_qualified": 3,
+          "datasets_profitable": 3,
+          "datasets_tradable": 9,
+          "avg_return": -0.0429,
+          "avg_sharpe": -0.6155,
+          "avg_alpha": 0.2834,
+          "max_drawdown": 0.1948,
+          "avg_profit_factor": 1.216,
+          "total_trades": 549,
+          "consistency_score": 0.3333,
+          "pass_rate": 0.3333,
+          "avg_oos_return": -0.0088,
+          "avg_degradation": 0.1088,
+          "robustness_score": 0.2525,
+          "all_qualified": false,
+          "approved_datasets": [
+            {
+              "symbol": "BTCUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -8.88% < min 0.00%",
+                "Sharpe -2.84 < min 0.00",
+                "Profit factor 0.58 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -9.67% < min 0.00%",
+                "Sharpe -1.31 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "4h",
+              "approved": true,
+              "reasons": [
+                "approved"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -6.04% < min 0.00%",
+                "Sharpe -0.95 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -8.49% < min 0.00%",
+                "Sharpe -0.83 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "4h",
+              "approved": true,
+              "reasons": [
+                "approved"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -5.26% < min 0.00%",
+                "Sharpe -0.68 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -6.46% < min 0.00%",
+                "Sharpe -0.69 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "4h",
+              "approved": true,
+              "reasons": [
+                "approved"
+              ]
+            }
+          ]
+        },
+        {
+          "strategy_name": "volatility_breakout",
+          "params": {
+            "keltner_ema": 15,
+            "keltner_atr_mult": 1.5,
+            "trend_ema": 40,
+            "cooldown_bars": 6
+          },
+          "datasets_evaluated": 9,
+          "datasets_qualified": 3,
+          "datasets_profitable": 3,
+          "datasets_tradable": 9,
+          "avg_return": -0.0413,
+          "avg_sharpe": -0.6191,
+          "avg_alpha": 0.2849,
+          "max_drawdown": 0.175,
+          "avg_profit_factor": 1.2629,
+          "total_trades": 548,
+          "consistency_score": 0.3333,
+          "pass_rate": 0.3333,
+          "avg_oos_return": -0.0086,
+          "avg_degradation": 0.1032,
+          "robustness_score": 0.2522,
+          "all_qualified": false,
+          "approved_datasets": [
+            {
+              "symbol": "BTCUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -9.71% < min 0.00%",
+                "Sharpe -3.02 < min 0.00",
+                "Profit factor 0.56 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -8.86% < min 0.00%",
+                "Sharpe -1.21 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "4h",
+              "approved": true,
+              "reasons": [
+                "approved"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -6.70% < min 0.00%",
+                "Sharpe -1.12 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -7.03% < min 0.00%",
+                "Sharpe -0.66 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "4h",
+              "approved": true,
+              "reasons": [
+                "approved"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -4.68% < min 0.00%",
+                "Sharpe -0.60 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -6.77% < min 0.00%",
+                "Sharpe -0.74 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "4h",
+              "approved": true,
+              "reasons": [
+                "approved"
+              ]
+            }
+          ]
+        },
+        {
+          "strategy_name": "volatility_breakout",
+          "params": {
+            "keltner_ema": 15,
+            "keltner_atr_mult": 1.5,
+            "trend_ema": 40,
+            "cooldown_bars": 10
+          },
+          "datasets_evaluated": 9,
+          "datasets_qualified": 3,
+          "datasets_profitable": 3,
+          "datasets_tradable": 9,
+          "avg_return": -0.0203,
+          "avg_sharpe": -0.2642,
+          "avg_alpha": 0.306,
+          "max_drawdown": 0.1744,
+          "avg_profit_factor": 1.5786,
+          "total_trades": 442,
+          "consistency_score": 0.3333,
+          "pass_rate": 0.3333,
+          "avg_oos_return": -0.0069,
+          "avg_degradation": 0.0536,
+          "robustness_score": 0.2506,
+          "all_qualified": false,
+          "approved_datasets": [
+            {
+              "symbol": "BTCUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -6.67% < min 0.00%",
+                "Sharpe -2.06 < min 0.00",
+                "Profit factor 0.58 < min 0.80"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -5.57% < min 0.00%",
+                "Sharpe -0.76 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "BTCUSDT",
+              "interval": "4h",
+              "approved": true,
+              "reasons": [
+                "approved"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -5.27% < min 0.00%",
+                "Sharpe -0.96 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -7.95% < min 0.00%",
+                "Sharpe -0.80 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "ETHUSDT",
+              "interval": "4h",
+              "approved": true,
+              "reasons": [
+                "approved"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "15m",
+              "approved": false,
+              "reasons": [
+                "Return -0.57% < min 0.00%"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "1h",
+              "approved": false,
+              "reasons": [
+                "Return -2.43% < min 0.00%",
+                "Sharpe -0.25 < min 0.00"
+              ]
+            },
+            {
+              "symbol": "BNBUSDT",
+              "interval": "4h",
+              "approved": true,
+              "reasons": [
+                "approved"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,166 @@
+{
+  "title": "Parity Audit Report",
+  "total_audited": 5,
+  "runtime_viable": 4,
+  "downgraded": 1,
+  "results": [
+    {
+      "symbol": "BTCUSDT",
+      "interval": "15m",
+      "strategy_name": "bollinger_mean_reversion",
+      "params": {
+        "bb_period": 30,
+        "bb_std_dev": 2.5,
+        "cooldown_bars": 6
+      },
+      "statistically_approved": true,
+      "robustness_score": 0.4151,
+      "runtime_viable": false,
+      "verdict": "downgraded",
+      "viability_reasons": [
+        "insufficient_trades: 0 < 1",
+        "low_execution_ratio: 0.0000 < 0.0005"
+      ],
+      "diagnostics": {
+        "total_candles": 5000,
+        "effective_candles": 4951,
+        "trades_executed": 0,
+        "lifecycle_blocked": 1849,
+        "risk_rejected": 1496,
+        "regime_blocked": 1449,
+        "order_rejected": 0,
+        "no_signal": 157,
+        "errors": 0,
+        "execution_ratio": 0.0,
+        "signal_ratio": 0.6756,
+        "initial_capital": 10000.0,
+        "final_equity": 10000.0,
+        "net_pnl": 0.0
+      }
+    },
+    {
+      "symbol": "ETHUSDT",
+      "interval": "15m",
+      "strategy_name": "bollinger_mean_reversion",
+      "params": {
+        "bb_period": 30,
+        "bb_std_dev": 2.5,
+        "cooldown_bars": 6
+      },
+      "statistically_approved": true,
+      "robustness_score": 0.4151,
+      "runtime_viable": true,
+      "verdict": "approved",
+      "viability_reasons": [],
+      "diagnostics": {
+        "total_candles": 5000,
+        "effective_candles": 4951,
+        "trades_executed": 4,
+        "lifecycle_blocked": 2078,
+        "risk_rejected": 2504,
+        "regime_blocked": 205,
+        "order_rejected": 0,
+        "no_signal": 160,
+        "errors": 0,
+        "execution_ratio": 0.0008,
+        "signal_ratio": 0.9263,
+        "initial_capital": 10000.0,
+        "final_equity": 9883.9,
+        "net_pnl": -116.1
+      }
+    },
+    {
+      "symbol": "ETHUSDT",
+      "interval": "4h",
+      "strategy_name": "bollinger_mean_reversion",
+      "params": {
+        "bb_period": 30,
+        "bb_std_dev": 2.5,
+        "cooldown_bars": 6
+      },
+      "statistically_approved": true,
+      "robustness_score": 0.4151,
+      "runtime_viable": true,
+      "verdict": "approved",
+      "viability_reasons": [],
+      "diagnostics": {
+        "total_candles": 1083,
+        "effective_candles": 1034,
+        "trades_executed": 1,
+        "lifecycle_blocked": 164,
+        "risk_rejected": 829,
+        "regime_blocked": 0,
+        "order_rejected": 0,
+        "no_signal": 40,
+        "errors": 0,
+        "execution_ratio": 0.001,
+        "signal_ratio": 0.9613,
+        "initial_capital": 10000.0,
+        "final_equity": 9834.85,
+        "net_pnl": -165.15
+      }
+    },
+    {
+      "symbol": "BNBUSDT",
+      "interval": "15m",
+      "strategy_name": "bollinger_mean_reversion",
+      "params": {
+        "bb_period": 30,
+        "bb_std_dev": 2.5,
+        "cooldown_bars": 6
+      },
+      "statistically_approved": true,
+      "robustness_score": 0.4151,
+      "runtime_viable": true,
+      "verdict": "approved",
+      "viability_reasons": [],
+      "diagnostics": {
+        "total_candles": 5000,
+        "effective_candles": 4951,
+        "trades_executed": 9,
+        "lifecycle_blocked": 1731,
+        "risk_rejected": 2978,
+        "regime_blocked": 173,
+        "order_rejected": 0,
+        "no_signal": 60,
+        "errors": 0,
+        "execution_ratio": 0.0018,
+        "signal_ratio": 0.9529,
+        "initial_capital": 10000.0,
+        "final_equity": 10074.48,
+        "net_pnl": 74.48
+      }
+    },
+    {
+      "symbol": "BNBUSDT",
+      "interval": "4h",
+      "strategy_name": "bollinger_mean_reversion",
+      "params": {
+        "bb_period": 30,
+        "bb_std_dev": 2.5,
+        "cooldown_bars": 6
+      },
+      "statistically_approved": true,
+      "robustness_score": 0.4151,
+      "runtime_viable": true,
+      "verdict": "approved",
+      "viability_reasons": [],
+      "diagnostics": {
+        "total_candles": 1083,
+        "effective_candles": 1034,
+        "trades_executed": 1,
+        "lifecycle_blocked": 490,
+        "risk_rejected": 525,
+        "regime_blocked": 0,
+        "order_rejected": 0,
+        "no_signal": 18,
+        "errors": 0,
+        "execution_ratio": 0.001,
+        "signal_ratio": 0.9826,
+        "initial_capital": 10000.0,
+        "final_equity": 10433.12,
+        "net_pnl": 433.12
+      }
+    }
+  ]
+}

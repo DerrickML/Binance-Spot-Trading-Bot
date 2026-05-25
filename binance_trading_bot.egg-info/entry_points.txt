@@ -1,0 +1,2 @@
+[console_scripts]
+trading-bot = app.cli:app

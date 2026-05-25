@@ -1,0 +1,103 @@
+{
+  "title": "Matrix Evaluation Report",
+  "symbols": [
+    "BTCUSDT",
+    "ETHUSDT",
+    "BNBUSDT"
+  ],
+  "intervals": [
+    "15m",
+    "1h",
+    "4h"
+  ],
+  "lookback_days": 180,
+  "total_datasets": 9,
+  "thresholds": {
+    "min_total_return_pct": 0.0,
+    "min_sharpe_ratio": 0.0,
+    "min_total_trades": 5,
+    "max_drawdown_pct": 0.3,
+    "min_profit_factor": 0.8,
+    "min_oos_consistency": 0.0,
+    "min_benchmark_alpha_pct": 0.0
+  },
+  "best_ranked": "ema_atr_crossover",
+  "best_qualified": null,
+  "leaderboard": [
+    {
+      "strategy_name": "ema_atr_crossover",
+      "datasets_evaluated": 9,
+      "datasets_qualified": 1,
+      "avg_return": -0.0719,
+      "avg_sharpe": -2.655,
+      "avg_drawdown": 0.0978,
+      "max_drawdown": 0.1814,
+      "avg_alpha": 0.2544,
+      "avg_oos_consistency": 0.0,
+      "avg_profit_factor": 0.687,
+      "total_trades": 332,
+      "consistency_score": 0.2222,
+      "all_qualified": false
+    },
+    {
+      "strategy_name": "bollinger_mean_reversion",
+      "datasets_evaluated": 9,
+      "datasets_qualified": 1,
+      "avg_return": -0.0277,
+      "avg_sharpe": -0.8908,
+      "avg_drawdown": 0.061,
+      "max_drawdown": 0.1075,
+      "avg_alpha": 0.2986,
+      "avg_oos_consistency": 0.0,
+      "avg_profit_factor": 0.7277,
+      "total_trades": 366,
+      "consistency_score": 0.1111,
+      "all_qualified": false
+    },
+    {
+      "strategy_name": "rsi_mean_reversion",
+      "datasets_evaluated": 9,
+      "datasets_qualified": 1,
+      "avg_return": -0.0361,
+      "avg_sharpe": -2.015,
+      "avg_drawdown": 0.0579,
+      "max_drawdown": 0.1232,
+      "avg_alpha": 0.2901,
+      "avg_oos_consistency": 0.0,
+      "avg_profit_factor": 0.9279,
+      "total_trades": 184,
+      "consistency_score": 0.1111,
+      "all_qualified": false
+    },
+    {
+      "strategy_name": "breakout",
+      "datasets_evaluated": 9,
+      "datasets_qualified": 1,
+      "avg_return": -0.074,
+      "avg_sharpe": -2.828,
+      "avg_drawdown": 0.1133,
+      "max_drawdown": 0.178,
+      "avg_alpha": 0.2522,
+      "avg_oos_consistency": 0.0,
+      "avg_profit_factor": 0.7783,
+      "total_trades": 692,
+      "consistency_score": 0.1111,
+      "all_qualified": false
+    },
+    {
+      "strategy_name": "regime_adaptive",
+      "datasets_evaluated": 9,
+      "datasets_qualified": 0,
+      "avg_return": -0.0633,
+      "avg_sharpe": -2.8095,
+      "avg_drawdown": 0.0899,
+      "max_drawdown": 0.1225,
+      "avg_alpha": 0.263,
+      "avg_oos_consistency": 0.0,
+      "avg_profit_factor": 0.689,
+      "total_trades": 443,
+      "consistency_score": 0.0,
+      "all_qualified": false
+    }
+  ]
+}

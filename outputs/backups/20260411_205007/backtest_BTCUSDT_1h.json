@@ -1,0 +1,136 @@
+{
+  "title": "Strategy Ranking Report",
+  "generated_at": "2026-03-21T00:20:18.027344+00:00",
+  "total_strategies": 5,
+  "rankings": [
+    {
+      "rank": 1,
+      "strategy_name": "bollinger_mean_reversion",
+      "composite_score": 0.8815,
+      "net_profit": -538.54,
+      "total_return_pct": -0.0539,
+      "max_drawdown_pct": 0.0803,
+      "sharpe_ratio": -2.1823,
+      "sortino_ratio": -1.1527,
+      "profit_factor": 0.6014,
+      "win_rate": 0.6591,
+      "total_trades": 44,
+      "score_breakdown": {
+        "total_return_pct": 0.15,
+        "max_drawdown_pct": 0.2,
+        "sharpe_ratio": 0.2,
+        "sortino_ratio": 0.1,
+        "profit_factor": 0.0332,
+        "win_rate": 0.1,
+        "avg_trade_return_pct": 0.0483,
+        "max_consecutive_losses": 0.05
+      }
+    },
+    {
+      "rank": 2,
+      "strategy_name": "breakout",
+      "composite_score": 0.7751,
+      "net_profit": -620.64,
+      "total_return_pct": -0.0621,
+      "max_drawdown_pct": 0.1133,
+      "sharpe_ratio": -2.2023,
+      "sortino_ratio": -1.9121,
+      "profit_factor": 0.926,
+      "win_rate": 0.404,
+      "total_trades": 99,
+      "score_breakdown": {
+        "total_return_pct": 0.1376,
+        "max_drawdown_pct": 0.1298,
+        "sharpe_ratio": 0.1982,
+        "sortino_ratio": 0.0718,
+        "profit_factor": 0.1,
+        "win_rate": 0.0377,
+        "avg_trade_return_pct": 0.1,
+        "max_consecutive_losses": 0.0
+      }
+    },
+    {
+      "rank": 3,
+      "strategy_name": "regime_adaptive",
+      "composite_score": 0.4737,
+      "net_profit": -774.49,
+      "total_return_pct": -0.0774,
+      "max_drawdown_pct": 0.0984,
+      "sharpe_ratio": -3.7783,
+      "sortino_ratio": -2.172,
+      "profit_factor": 0.4817,
+      "win_rate": 0.2667,
+      "total_trades": 45,
+      "score_breakdown": {
+        "total_return_pct": 0.1144,
+        "max_drawdown_pct": 0.1614,
+        "sharpe_ratio": 0.0564,
+        "sortino_ratio": 0.0622,
+        "profit_factor": 0.0086,
+        "win_rate": 0.0041,
+        "avg_trade_return_pct": 0.0291,
+        "max_consecutive_losses": 0.0375
+      }
+    },
+    {
+      "rank": 4,
+      "strategy_name": "ema_atr_crossover",
+      "composite_score": 0.4667,
+      "net_profit": -747.4,
+      "total_return_pct": -0.0747,
+      "max_drawdown_pct": 0.0933,
+      "sharpe_ratio": -3.1705,
+      "sortino_ratio": -2.1039,
+      "profit_factor": 0.44,
+      "win_rate": 0.25,
+      "total_trades": 44,
+      "score_breakdown": {
+        "total_return_pct": 0.1185,
+        "max_drawdown_pct": 0.1724,
+        "sharpe_ratio": 0.1111,
+        "sortino_ratio": 0.0647,
+        "profit_factor": 0.0,
+        "win_rate": 0.0,
+        "avg_trade_return_pct": 0.0,
+        "max_consecutive_losses": 0.0
+      }
+    },
+    {
+      "rank": 5,
+      "strategy_name": "rsi_mean_reversion",
+      "composite_score": 0.0882,
+      "net_profit": -1531.78,
+      "total_return_pct": -0.1532,
+      "max_drawdown_pct": 0.1744,
+      "sharpe_ratio": -4.4057,
+      "sortino_ratio": -3.8476,
+      "profit_factor": 0.4952,
+      "win_rate": 0.4062,
+      "total_trades": 64,
+      "score_breakdown": {
+        "total_return_pct": 0.0,
+        "max_drawdown_pct": 0.0,
+        "sharpe_ratio": 0.0,
+        "sortino_ratio": 0.0,
+        "profit_factor": 0.0114,
+        "win_rate": 0.0382,
+        "avg_trade_return_pct": 0.0011,
+        "max_consecutive_losses": 0.0375
+      }
+    }
+  ],
+  "benchmark": {
+    "symbol": "BTCUSDT",
+    "total_return_pct": -0.1997,
+    "max_drawdown_pct": 0.3559,
+    "sharpe_ratio": -1.5447
+  },
+  "qualification": {
+    "qualified": false,
+    "failures": [
+      "Return -5.39% < min 0.00%",
+      "Sharpe -2.18 < min 0.00",
+      "Profit factor 0.60 < min 0.80"
+    ]
+  }
+}
