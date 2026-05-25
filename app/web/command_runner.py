@@ -247,7 +247,8 @@ class CommandRunner:
     async def _broadcast(self, line: str) -> None:
         """Send a line to all connected WebSocket clients."""
         dead_clients: set[WebSocket] = set()
-        for ws in self._ws_clients:
+        # Snapshot the set: unregister_ws() may modify it while we yield at send_json
+        for ws in list(self._ws_clients):
             try:
                 if ws.client_state == WebSocketState.CONNECTED:
                     await ws.send_json({"type": "output", "line": line})
@@ -273,7 +274,8 @@ class CommandRunner:
             },
         }
         dead_clients: set[WebSocket] = set()
-        for ws in self._ws_clients:
+        # Snapshot the set: unregister_ws() may modify it while we yield at send_json
+        for ws in list(self._ws_clients):
             try:
                 if ws.client_state == WebSocketState.CONNECTED:
                     await ws.send_json(status_msg)
