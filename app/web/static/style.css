@@ -263,8 +263,8 @@ input:focus, select:focus, textarea:focus {
   cursor: pointer;
   border-bottom: 2px solid transparent;
   transition: all var(--transition);
-  user-select: none;
   -webkit-user-select: none;
+  user-select: none;
 }
 .nav-tab:hover { color: var(--text-primary); }
 .nav-tab.active {
@@ -303,8 +303,8 @@ input:focus, select:focus, textarea:focus {
 }
 .card-glass {
   background: rgba(22,27,34,.7);
-  backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
 }
 .card-header {
   display: flex;
