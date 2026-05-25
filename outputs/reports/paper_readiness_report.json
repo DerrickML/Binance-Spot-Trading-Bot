@@ -1,6 +1,6 @@
 {
   "title": "Paper Readiness Report",
-  "generated_at": "2026-04-13T10:48:44.185742+00:00",
+  "generated_at": "2026-05-25T09:17:18.680639+00:00",
   "decision": "PAPER_READY",
   "trading_mode": "paper",
   "live_enabled": false,
@@ -10,28 +10,28 @@
     "BNBUSDT"
   ],
   "configured_interval": "4h",
-  "approved_count": 2,
+  "approved_count": 4,
   "configured_approved_count": 2,
-  "recent_replay_ready_count": 1,
+  "recent_replay_ready_count": 3,
   "runtime_ready_count": 1,
   "recent_replay_limit": 300,
-  "total_combinations": 3,
+  "total_combinations": 9,
   "approved_combinations": [
     {
-      "symbol": "ETHUSDT",
-      "interval": "4h",
+      "symbol": "BTCUSDT",
+      "interval": "1h",
       "strategy_name": "hybrid_grid_dca",
-      "robustness_score": 0.46123700127719586,
-      "pass_rate": 1.0,
+      "robustness_score": 0.4014074011811358,
+      "pass_rate": 0.7777777777777778,
       "parameters": {
         "anchor_period": 80,
         "trend_filter_period": 200,
-        "grid_spacing_pct": 0.016,
+        "grid_spacing_pct": 0.02,
         "max_grid_levels": 3,
         "base_order_pct": 0.05,
         "dca_size_multiplier": 1.25,
-        "take_profit_pct": 0.014,
-        "stop_loss_pct": 0.06,
+        "take_profit_pct": 0.02,
+        "stop_loss_pct": 0.1,
         "max_grid_allocation_pct": 0.25,
         "cooldown_bars": 1,
         "min_volatility_pct": 0.002,
@@ -55,18 +55,18 @@
         "min_periods": 200
       },
       "recent_replay": {
-        "symbol": "ETHUSDT",
-        "interval": "4h",
+        "symbol": "BTCUSDT",
+        "interval": "1h",
         "strategy_name": "hybrid_grid_dca",
         "params": {
           "anchor_period": 80,
           "trend_filter_period": 200,
-          "grid_spacing_pct": 0.016,
+          "grid_spacing_pct": 0.02,
           "max_grid_levels": 3,
           "base_order_pct": 0.05,
           "dca_size_multiplier": 1.25,
-          "take_profit_pct": 0.014,
-          "stop_loss_pct": 0.06,
+          "take_profit_pct": 0.02,
+          "stop_loss_pct": 0.1,
           "max_grid_allocation_pct": 0.25,
           "cooldown_bars": 1,
           "min_volatility_pct": 0.002,
@@ -90,29 +90,149 @@
           "min_periods": 200
         },
         "statistically_approved": true,
-        "robustness_score": 0.4612,
+        "robustness_score": 0.4014,
         "runtime_viable": true,
         "verdict": "approved",
         "viability_reasons": [],
         "diagnostics": {
           "total_candles": 300,
           "effective_candles": 251,
-          "trades_executed": 6,
+          "trades_executed": 4,
           "lifecycle_blocked": 0,
           "risk_rejected": 0,
           "regime_blocked": 0,
           "order_rejected": 0,
-          "no_signal": 245,
+          "no_signal": 247,
           "errors": 0,
-          "execution_ratio": 0.0239,
-          "signal_ratio": 0.0239,
+          "execution_ratio": 0.0159,
+          "signal_ratio": 0.0159,
           "initial_capital": 10000.0,
-          "final_equity": 10026.39,
-          "net_pnl": 26.39,
+          "final_equity": 10032.26,
+          "net_pnl": 32.26,
+          "grid_actions": {
+            "open": 1,
+            "scale_in": 2,
+            "take_profit": 1
+          }
+        }
+      },
+      "configured_for_runtime": false,
+      "grid_diagnostics": {
+        "approved_grid_params": {
+          "anchor_period": 80,
+          "trend_filter_period": 200,
+          "grid_spacing_pct": 0.02,
+          "max_grid_levels": 3,
+          "base_order_pct": 0.05,
+          "dca_size_multiplier": 1.25,
+          "take_profit_pct": 0.02,
+          "stop_loss_pct": 0.1,
+          "max_grid_allocation_pct": 0.25
+        },
+        "max_allocation_pct": 0.25,
+        "grid_levels": 3,
+        "runtime_replay_pnl": null,
+        "runtime_trades_executed": null,
+        "grid_actions": {}
+      }
+    },
+    {
+      "symbol": "BTCUSDT",
+      "interval": "4h",
+      "strategy_name": "hybrid_grid_dca",
+      "robustness_score": 0.4014074011811358,
+      "pass_rate": 0.7777777777777778,
+      "parameters": {
+        "anchor_period": 80,
+        "trend_filter_period": 200,
+        "grid_spacing_pct": 0.02,
+        "max_grid_levels": 3,
+        "base_order_pct": 0.05,
+        "dca_size_multiplier": 1.25,
+        "take_profit_pct": 0.02,
+        "stop_loss_pct": 0.1,
+        "max_grid_allocation_pct": 0.25,
+        "cooldown_bars": 1,
+        "min_volatility_pct": 0.002,
+        "atr_period": 14,
+        "atr_grid_spacing_mult": 0.75,
+        "min_trend_slope_pct": -0.02,
+        "trend_slope_lookback": 20,
+        "max_anchor_deviation_pct": 0.08,
+        "take_profit_fee_buffer_pct": 0.002,
+        "stop_cooldown_bars": 5,
+        "scale_in_requires_below_average": true,
+        "scale_in_requires_level_reclaim": true,
+        "entry_momentum_lookback": 12,
+        "min_entry_momentum_pct": -0.06,
+        "support_lookback": 40,
+        "support_buffer_pct": 0.005,
+        "max_bearish_streak": 4,
+        "volatility_zscore_lookback": 80,
+        "max_volatility_zscore": 2.5,
+        "require_reversal_confirmation": false,
+        "min_periods": 200
+      },
+      "recent_replay": {
+        "symbol": "BTCUSDT",
+        "interval": "4h",
+        "strategy_name": "hybrid_grid_dca",
+        "params": {
+          "anchor_period": 80,
+          "trend_filter_period": 200,
+          "grid_spacing_pct": 0.02,
+          "max_grid_levels": 3,
+          "base_order_pct": 0.05,
+          "dca_size_multiplier": 1.25,
+          "take_profit_pct": 0.02,
+          "stop_loss_pct": 0.1,
+          "max_grid_allocation_pct": 0.25,
+          "cooldown_bars": 1,
+          "min_volatility_pct": 0.002,
+          "atr_period": 14,
+          "atr_grid_spacing_mult": 0.75,
+          "min_trend_slope_pct": -0.02,
+          "trend_slope_lookback": 20,
+          "max_anchor_deviation_pct": 0.08,
+          "take_profit_fee_buffer_pct": 0.002,
+          "stop_cooldown_bars": 5,
+          "scale_in_requires_below_average": true,
+          "scale_in_requires_level_reclaim": true,
+          "entry_momentum_lookback": 12,
+          "min_entry_momentum_pct": -0.06,
+          "support_lookback": 40,
+          "support_buffer_pct": 0.005,
+          "max_bearish_streak": 4,
+          "volatility_zscore_lookback": 80,
+          "max_volatility_zscore": 2.5,
+          "require_reversal_confirmation": false,
+          "min_periods": 200
+        },
+        "statistically_approved": true,
+        "robustness_score": 0.4014,
+        "runtime_viable": false,
+        "verdict": "downgraded",
+        "viability_reasons": [
+          "negative_runtime_pnl: $-6.92 < $0.00"
+        ],
+        "diagnostics": {
+          "total_candles": 300,
+          "effective_candles": 251,
+          "trades_executed": 3,
+          "lifecycle_blocked": 0,
+          "risk_rejected": 0,
+          "regime_blocked": 0,
+          "order_rejected": 0,
+          "no_signal": 248,
+          "errors": 0,
+          "execution_ratio": 0.012,
+          "signal_ratio": 0.012,
+          "initial_capital": 10000.0,
+          "final_equity": 9993.08,
+          "net_pnl": -6.92,
           "grid_actions": {
             "open": 2,
-            "take_profit": 2,
-            "scale_in": 2
+            "take_profit": 1
           }
         }
       },
@@ -121,41 +241,154 @@
         "approved_grid_params": {
           "anchor_period": 80,
           "trend_filter_period": 200,
-          "grid_spacing_pct": 0.016,
+          "grid_spacing_pct": 0.02,
           "max_grid_levels": 3,
           "base_order_pct": 0.05,
           "dca_size_multiplier": 1.25,
-          "take_profit_pct": 0.014,
-          "stop_loss_pct": 0.06,
+          "take_profit_pct": 0.02,
+          "stop_loss_pct": 0.1,
           "max_grid_allocation_pct": 0.25
         },
         "max_allocation_pct": 0.25,
         "grid_levels": 3,
-        "runtime_replay_pnl": 19.71,
-        "runtime_trades_executed": 55,
-        "grid_actions": {
-          "open": 24,
-          "scale_in": 5,
-          "take_profit": 22,
-          "stop_exit": 4
+        "runtime_replay_pnl": null,
+        "runtime_trades_executed": null,
+        "grid_actions": {}
+      }
+    },
+    {
+      "symbol": "BNBUSDT",
+      "interval": "1h",
+      "strategy_name": "hybrid_grid_dca",
+      "robustness_score": 0.4014074011811358,
+      "pass_rate": 0.7777777777777778,
+      "parameters": {
+        "anchor_period": 80,
+        "trend_filter_period": 200,
+        "grid_spacing_pct": 0.02,
+        "max_grid_levels": 3,
+        "base_order_pct": 0.05,
+        "dca_size_multiplier": 1.25,
+        "take_profit_pct": 0.02,
+        "stop_loss_pct": 0.1,
+        "max_grid_allocation_pct": 0.25,
+        "cooldown_bars": 1,
+        "min_volatility_pct": 0.002,
+        "atr_period": 14,
+        "atr_grid_spacing_mult": 0.75,
+        "min_trend_slope_pct": -0.02,
+        "trend_slope_lookback": 20,
+        "max_anchor_deviation_pct": 0.08,
+        "take_profit_fee_buffer_pct": 0.002,
+        "stop_cooldown_bars": 5,
+        "scale_in_requires_below_average": true,
+        "scale_in_requires_level_reclaim": true,
+        "entry_momentum_lookback": 12,
+        "min_entry_momentum_pct": -0.06,
+        "support_lookback": 40,
+        "support_buffer_pct": 0.005,
+        "max_bearish_streak": 4,
+        "volatility_zscore_lookback": 80,
+        "max_volatility_zscore": 2.5,
+        "require_reversal_confirmation": false,
+        "min_periods": 200
+      },
+      "recent_replay": {
+        "symbol": "BNBUSDT",
+        "interval": "1h",
+        "strategy_name": "hybrid_grid_dca",
+        "params": {
+          "anchor_period": 80,
+          "trend_filter_period": 200,
+          "grid_spacing_pct": 0.02,
+          "max_grid_levels": 3,
+          "base_order_pct": 0.05,
+          "dca_size_multiplier": 1.25,
+          "take_profit_pct": 0.02,
+          "stop_loss_pct": 0.1,
+          "max_grid_allocation_pct": 0.25,
+          "cooldown_bars": 1,
+          "min_volatility_pct": 0.002,
+          "atr_period": 14,
+          "atr_grid_spacing_mult": 0.75,
+          "min_trend_slope_pct": -0.02,
+          "trend_slope_lookback": 20,
+          "max_anchor_deviation_pct": 0.08,
+          "take_profit_fee_buffer_pct": 0.002,
+          "stop_cooldown_bars": 5,
+          "scale_in_requires_below_average": true,
+          "scale_in_requires_level_reclaim": true,
+          "entry_momentum_lookback": 12,
+          "min_entry_momentum_pct": -0.06,
+          "support_lookback": 40,
+          "support_buffer_pct": 0.005,
+          "max_bearish_streak": 4,
+          "volatility_zscore_lookback": 80,
+          "max_volatility_zscore": 2.5,
+          "require_reversal_confirmation": false,
+          "min_periods": 200
+        },
+        "statistically_approved": true,
+        "robustness_score": 0.4014,
+        "runtime_viable": true,
+        "verdict": "approved",
+        "viability_reasons": [],
+        "diagnostics": {
+          "total_candles": 300,
+          "effective_candles": 251,
+          "trades_executed": 3,
+          "lifecycle_blocked": 0,
+          "risk_rejected": 0,
+          "regime_blocked": 0,
+          "order_rejected": 0,
+          "no_signal": 248,
+          "errors": 0,
+          "execution_ratio": 0.012,
+          "signal_ratio": 0.012,
+          "initial_capital": 10000.0,
+          "final_equity": 10013.02,
+          "net_pnl": 13.02,
+          "grid_actions": {
+            "open": 2,
+            "take_profit": 1
+          }
         }
+      },
+      "configured_for_runtime": false,
+      "grid_diagnostics": {
+        "approved_grid_params": {
+          "anchor_period": 80,
+          "trend_filter_period": 200,
+          "grid_spacing_pct": 0.02,
+          "max_grid_levels": 3,
+          "base_order_pct": 0.05,
+          "dca_size_multiplier": 1.25,
+          "take_profit_pct": 0.02,
+          "stop_loss_pct": 0.1,
+          "max_grid_allocation_pct": 0.25
+        },
+        "max_allocation_pct": 0.25,
+        "grid_levels": 3,
+        "runtime_replay_pnl": null,
+        "runtime_trades_executed": null,
+        "grid_actions": {}
       }
     },
     {
       "symbol": "BNBUSDT",
       "interval": "4h",
       "strategy_name": "hybrid_grid_dca",
-      "robustness_score": 0.46123700127719586,
-      "pass_rate": 1.0,
+      "robustness_score": 0.4014074011811358,
+      "pass_rate": 0.7777777777777778,
       "parameters": {
         "anchor_period": 80,
         "trend_filter_period": 200,
-        "grid_spacing_pct": 0.016,
+        "grid_spacing_pct": 0.02,
         "max_grid_levels": 3,
         "base_order_pct": 0.05,
         "dca_size_multiplier": 1.25,
-        "take_profit_pct": 0.014,
-        "stop_loss_pct": 0.06,
+        "take_profit_pct": 0.02,
+        "stop_loss_pct": 0.1,
         "max_grid_allocation_pct": 0.25,
         "cooldown_bars": 1,
         "min_volatility_pct": 0.002,
@@ -185,12 +418,12 @@
         "params": {
           "anchor_period": 80,
           "trend_filter_period": 200,
-          "grid_spacing_pct": 0.016,
+          "grid_spacing_pct": 0.02,
           "max_grid_levels": 3,
           "base_order_pct": 0.05,
           "dca_size_multiplier": 1.25,
-          "take_profit_pct": 0.014,
-          "stop_loss_pct": 0.06,
+          "take_profit_pct": 0.02,
+          "stop_loss_pct": 0.1,
           "max_grid_allocation_pct": 0.25,
           "cooldown_bars": 1,
           "min_volatility_pct": 0.002,
@@ -214,12 +447,10 @@
           "min_periods": 200
         },
         "statistically_approved": true,
-        "robustness_score": 0.4612,
-        "runtime_viable": false,
-        "verdict": "downgraded",
-        "viability_reasons": [
-          "negative_runtime_pnl: $-35.10 < $0.00"
-        ],
+        "robustness_score": 0.4014,
+        "runtime_viable": true,
+        "verdict": "approved",
+        "viability_reasons": [],
         "diagnostics": {
           "total_candles": 300,
           "effective_candles": 251,
@@ -233,11 +464,11 @@
           "execution_ratio": 0.0199,
           "signal_ratio": 0.0199,
           "initial_capital": 10000.0,
-          "final_equity": 9964.9,
-          "net_pnl": -35.1,
+          "final_equity": 10024.32,
+          "net_pnl": 24.32,
           "grid_actions": {
-            "open": 3,
-            "stop_exit": 1,
+            "open": 2,
+            "scale_in": 2,
             "take_profit": 1
           }
         }
@@ -247,35 +478,67 @@
         "approved_grid_params": {
           "anchor_period": 80,
           "trend_filter_period": 200,
-          "grid_spacing_pct": 0.016,
+          "grid_spacing_pct": 0.02,
           "max_grid_levels": 3,
           "base_order_pct": 0.05,
           "dca_size_multiplier": 1.25,
-          "take_profit_pct": 0.014,
-          "stop_loss_pct": 0.06,
+          "take_profit_pct": 0.02,
+          "stop_loss_pct": 0.1,
           "max_grid_allocation_pct": 0.25
         },
         "max_allocation_pct": 0.25,
         "grid_levels": 3,
-        "runtime_replay_pnl": 6.08,
-        "runtime_trades_executed": 32,
-        "grid_actions": {
-          "open": 12,
-          "take_profit": 8,
-          "scale_in": 9,
-          "stop_exit": 3
-        }
+        "runtime_replay_pnl": 0.0,
+        "runtime_trades_executed": 0,
+        "grid_actions": {}
       }
     }
   ],
   "rejected_combinations": [
     {
       "symbol": "BTCUSDT",
-      "interval": "4h",
+      "interval": "15m",
       "strategy_name": "hybrid_grid_dca",
       "reasons": [
         "approved",
-        "runtime_negative_runtime_pnl: $-1.20 < $0.00"
+        "runtime_negative_runtime_pnl: $-16.31 < $0.00"
+      ]
+    },
+    {
+      "symbol": "ETHUSDT",
+      "interval": "15m",
+      "strategy_name": "hybrid_grid_dca",
+      "reasons": [
+        "Return -1.54% < min 0.00%",
+        "Sharpe -0.20 < min 0.00"
+      ]
+    },
+    {
+      "symbol": "ETHUSDT",
+      "interval": "1h",
+      "strategy_name": "hybrid_grid_dca",
+      "reasons": [
+        "approved",
+        "runtime_negative_runtime_pnl: $-129.67 < $0.00"
+      ]
+    },
+    {
+      "symbol": "ETHUSDT",
+      "interval": "4h",
+      "strategy_name": "hybrid_grid_dca",
+      "reasons": [
+        "Return -1.29% < min 0.00%",
+        "Sharpe -1.85 < min 0.00",
+        "Profit factor 0.64 < min 0.80"
+      ]
+    },
+    {
+      "symbol": "BNBUSDT",
+      "interval": "15m",
+      "strategy_name": "hybrid_grid_dca",
+      "reasons": [
+        "approved",
+        "runtime_negative_runtime_pnl: $-9.32 < $0.00"
       ]
     }
   ],

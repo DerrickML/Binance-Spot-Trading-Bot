@@ -206,6 +206,9 @@ class CommandRunner:
                     f"duration={duration:.1f}s"
                 )
 
+                # Send structured status update so frontend can transition UI
+                await self._broadcast_status()
+
                 logger.info(
                     "command_complete",
                     command=self._current_command,
@@ -251,6 +254,31 @@ class CommandRunner:
             except Exception:
                 dead_clients.add(ws)
 
+        self._ws_clients -= dead_clients
+
+    async def _broadcast_status(self) -> None:
+        """Send a structured status update to all connected WebSocket clients."""
+        status = self.get_status()
+        # Don't include full output in the status broadcast (clients already have it)
+        status_msg = {
+            "type": "status",
+            "data": {
+                "running": status["running"],
+                "command": status["command"],
+                "args": status["args"],
+                "started_at": status["started_at"],
+                "exit_code": status["exit_code"],
+                "finished": status["finished"],
+                "output_lines": status["output_lines"],
+            },
+        }
+        dead_clients: set[WebSocket] = set()
+        for ws in self._ws_clients:
+            try:
+                if ws.client_state == WebSocketState.CONNECTED:
+                    await ws.send_json(status_msg)
+            except Exception:
+                dead_clients.add(ws)
         self._ws_clients -= dead_clients
 
     def register_ws(self, ws: WebSocket) -> None:

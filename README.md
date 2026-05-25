@@ -176,7 +176,8 @@ pm2 start ecosystem.config.js
 
 ## Documentation
 
-- [Testing and Running Guide](docs/testing_and_running.md)
+- [Production Deployment Guide](docs/production_deployment.md) — full VPS setup, data population, paper trading → live trading
+- [Testing and Running Guide](docs/testing_and_running.md) — pre-live safety pipeline
 - [Architecture Details](docs/architecture.md)
 
 ## License

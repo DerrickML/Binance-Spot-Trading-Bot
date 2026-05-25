@@ -409,17 +409,13 @@
       const data = await res.json();
       if (data.running) {
         updateCommandUI(true, data.command);
-        // Show existing output
+        // Show existing output for a currently-running command
         if (data.output && data.output.length && !$('#terminal-output').children.length) {
           data.output.forEach(line => appendTerminalLine(line));
         }
-      } else if (data.finished && data.output && data.output.length) {
-        // Show completed output if terminal is empty
-        if (!$('#terminal-output').children.length) {
-          data.output.forEach(line => appendTerminalLine(line));
-        }
-        updateCommandUI(false);
       } else {
+        // Command is not running — reset UI to idle
+        // Don't repopulate terminal with stale output from a finished command
         updateCommandUI(false);
       }
     } catch (e) { /* ignore */ }
@@ -493,6 +489,11 @@
         } else if (msg.type === 'status' && msg.data) {
           const d = msg.data;
           updateCommandUI(d.running, d.command || '');
+          // If command just finished, show exit code badge
+          if (d.finished && !d.running && d.exit_code != null) {
+            const exitClass = d.exit_code === 0 ? 'success' : 'error';
+            appendTerminalLine(`\n✓ Command completed (exit code: ${d.exit_code})`, exitClass);
+          }
         } else if (msg.type === 'pong') {
           /* heartbeat ack */
         }
