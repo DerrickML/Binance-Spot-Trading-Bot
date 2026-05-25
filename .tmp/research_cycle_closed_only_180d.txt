@@ -1,0 +1,601 @@
+
+Safe Research Cycle
+Live trading remains disabled; this workflow only gates paper routing.
+
+Step 1/5: Backfill matrix skipped
+
+Step 2/5: Optimize with runtime parity gate
+2026-04-12T00:40:05.120824Z [info     ] strategy_registered            [app.strategies.registry] cls=EmaAtrStrategy name=ema_atr_crossover
+2026-04-12T00:40:05.123696Z [info     ] strategy_registered            [app.strategies.registry] cls=RsiMeanReversionStrategy name=rsi_mean_reversion
+2026-04-12T00:40:05.126857Z [info     ] strategy_registered            [app.strategies.registry] cls=BollingerMeanReversionStrategy name=bollinger_mean_reversion
+2026-04-12T00:40:05.130106Z [info     ] strategy_registered            [app.strategies.registry] cls=BreakoutStrategy name=breakout
+2026-04-12T00:40:05.133083Z [info     ] strategy_registered            [app.strategies.registry] cls=RegimeStrategy name=regime_adaptive
+2026-04-12T00:40:05.135276Z [info     ] strategy_registered            [app.strategies.registry] cls=MomentumContinuationStrategy name=momentum_continuation
+2026-04-12T00:40:05.137867Z [info     ] strategy_registered            [app.strategies.registry] cls=PullbackUptrendStrategy name=pullback_uptrend
+2026-04-12T00:40:05.140017Z [info     ] strategy_registered            [app.strategies.registry] cls=VolatilityBreakoutStrategy name=volatility_breakout
+2026-04-12T00:40:05.891951Z [info     ] database_engine_created        [app.persistence.db] url=sqlite:///data/trading_bot.db
+2026-04-12T00:40:05.904232Z [info     ] database_initialized           [app.persistence.db] tables=['candles', 'strategy_definitions', 'backtest_runs', 'backtest_trades', 'signals', 'trades', 'positions', 'account_snapshots', 'notifications', 'incidents', 'selected_strategies', 'approved_combinations']
+
+Matrix Parameter Optimization
+  Symbols:    BTCUSDT, ETHUSDT, BNBUSDT
+  Intervals:  15m, 1h, 4h
+  Lookback:   180 days
+  Capital:    $10,000
+  Strategy:   bollinger_mean_reversion
+  Walk-fwd:   yes (2 windows)
+  Regime:     enabled
+  Pass-rate:  >=50%
+
+  [OK] BTCUSDT/15m: 17280 candles
+  [OK] BTCUSDT/1h: 4320 candles
+  [OK] BTCUSDT/4h: 1080 candles
+  [OK] ETHUSDT/15m: 17280 candles
+  [OK] ETHUSDT/1h: 4320 candles
+  [OK] ETHUSDT/4h: 1080 candles
+  [OK] BNBUSDT/15m: 17280 candles
+  [OK] BNBUSDT/1h: 4320 candles
+  [OK] BNBUSDT/4h: 1080 candles
+
+Optimizing bollinger_mean_reversion (8 param sets x 9 datasets x 3 runs = 216 
+backtests)
+2026-04-12T00:40:08.139119Z [info     ] matrix_optimization_start      [app.backtesting.optimizer] datasets=9 param_sets=8 strategy=bollinger_mean_reversion walk_forward=True
+2026-04-12T00:40:12.067227Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9349.28 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=64
+2026-04-12T00:40:13.480847Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9801.17 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=27
+2026-04-12T00:40:14.077841Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9994.57 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=4
+2026-04-12T00:40:15.643224Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9704.56 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=25
+2026-04-12T00:40:16.451661Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9834.68 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=8
+2026-04-12T00:40:16.457187Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=-0.0085 oos_consistency=0.0 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:40:17.551596Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9548.23 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=36
+2026-04-12T00:40:17.874093Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9764.17 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=15
+2026-04-12T00:40:17.983424Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10003.65 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=1
+2026-04-12T00:40:18.280187Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9854.71 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=17
+2026-04-12T00:40:18.416164Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9889.59 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=3
+2026-04-12T00:40:18.417509Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=-0.0053 oos_consistency=0.5 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:40:18.740316Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9967.19 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=15
+2026-04-12T00:40:18.816785Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10037.77 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=7
+2026-04-12T00:40:18.858407Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10000.0 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=0
+2026-04-12T00:40:18.963118Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9959.85 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=6
+2026-04-12T00:40:18.999112Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9943.67 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=1
+2026-04-12T00:40:19.000231Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=-0.0028 oos_consistency=0.0 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:40:23.034660Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9058.45 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=89
+2026-04-12T00:40:24.444091Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9622.46 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=32
+2026-04-12T00:40:24.985143Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9961.62 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=11
+2026-04-12T00:40:26.440017Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9541.38 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=35
+2026-04-12T00:40:27.008304Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9904.35 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=11
+2026-04-12T00:40:27.011853Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=-0.0067 oos_consistency=0.0 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:40:27.907057Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9692.44 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=36
+2026-04-12T00:40:28.294372Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9809.17 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=15
+2026-04-12T00:40:28.488538Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10053.59 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=2
+2026-04-12T00:40:28.888960Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9854.67 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=16
+2026-04-12T00:40:29.064426Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9973.28 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=3
+2026-04-12T00:40:29.065924Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=0.0013 oos_consistency=0.5 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:40:29.343612Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10134.49 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=13
+2026-04-12T00:40:29.430117Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10296.1 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=4
+2026-04-12T00:40:29.488079Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10000.0 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=0
+2026-04-12T00:40:29.575941Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9933.69 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=6
+2026-04-12T00:40:29.646944Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9853.08 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=2
+2026-04-12T00:40:29.648066Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=-0.0073 oos_consistency=0.0 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:40:33.722446Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9029.44 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=72
+2026-04-12T00:40:35.240222Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9634.29 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=31
+2026-04-12T00:40:35.801458Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9974.32 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=5
+2026-04-12T00:40:37.179601Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9532.64 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=29
+2026-04-12T00:40:37.910753Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9856.98 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=7
+2026-04-12T00:40:37.915220Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=-0.0084 oos_consistency=0.0 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:40:38.934201Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9665.75 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=33
+2026-04-12T00:40:39.271503Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10035.51 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=13
+2026-04-12T00:40:39.421215Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9919.44 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=2
+2026-04-12T00:40:39.810898Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9843.38 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=12
+2026-04-12T00:40:39.971289Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9844.62 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=6
+2026-04-12T00:40:39.973051Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=-0.0118 oos_consistency=0.0 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:40:40.274440Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9852.87 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=12
+2026-04-12T00:40:40.368568Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9915.51 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=5
+2026-04-12T00:40:40.423362Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10000.0 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=0
+2026-04-12T00:40:40.505482Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9981.27 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=3
+2026-04-12T00:40:40.540462Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10022.53 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=2
+2026-04-12T00:40:40.541590Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=0.0011 oos_consistency=0.5 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:40:44.696920Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9409.36 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=61
+2026-04-12T00:40:46.037675Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9801.17 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=27
+2026-04-12T00:40:46.554486Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9994.57 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=4
+2026-04-12T00:40:47.925669Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9737.66 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=23
+2026-04-12T00:40:48.518369Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9864.24 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=7
+2026-04-12T00:40:48.520295Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=-0.0071 oos_consistency=0.0 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:40:49.584854Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9548.23 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=36
+2026-04-12T00:40:50.035392Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9764.17 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=15
+2026-04-12T00:40:50.186799Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10003.65 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=1
+2026-04-12T00:40:50.539467Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9854.71 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=17
+2026-04-12T00:40:50.731091Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9889.59 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=3
+2026-04-12T00:40:50.734035Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=-0.0053 oos_consistency=0.5 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:40:51.028553Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9881.16 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=14
+2026-04-12T00:40:51.160913Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9951.13 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=6
+2026-04-12T00:40:51.210751Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10000.0 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=0
+2026-04-12T00:40:51.301227Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9959.85 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=6
+2026-04-12T00:40:51.340366Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9943.67 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=1
+2026-04-12T00:40:51.342366Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=-0.0028 oos_consistency=0.0 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:40:55.322076Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9096.42 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=88
+2026-04-12T00:40:56.668975Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9622.46 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=32
+2026-04-12T00:40:57.231314Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9961.62 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=11
+2026-04-12T00:40:58.599831Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9581.37 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=34
+2026-04-12T00:40:59.185116Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9904.35 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=11
+2026-04-12T00:40:59.186964Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=-0.0067 oos_consistency=0.0 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:41:00.179136Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9692.44 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=36
+2026-04-12T00:41:00.597842Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9809.17 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=15
+2026-04-12T00:41:00.753960Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10053.59 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=2
+2026-04-12T00:41:01.166562Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9854.67 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=16
+2026-04-12T00:41:01.318399Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9973.28 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=3
+2026-04-12T00:41:01.319647Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=0.0013 oos_consistency=0.5 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:41:01.662166Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10134.49 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=13
+2026-04-12T00:41:01.749688Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10296.1 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=4
+2026-04-12T00:41:01.811748Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10000.0 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=0
+2026-04-12T00:41:01.884167Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9933.69 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=6
+2026-04-12T00:41:01.922997Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9853.08 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=2
+2026-04-12T00:41:01.924996Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=-0.0073 oos_consistency=0.0 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:41:05.841301Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9055.42 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=71
+2026-04-12T00:41:07.286092Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9634.29 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=31
+2026-04-12T00:41:07.851856Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9974.32 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=5
+2026-04-12T00:41:09.181745Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9532.64 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=29
+2026-04-12T00:41:09.790229Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9885.34 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=6
+2026-04-12T00:41:09.792780Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=-0.007 oos_consistency=0.0 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:41:10.763713Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9741.05 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=31
+2026-04-12T00:41:11.084918Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9985.55 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=12
+2026-04-12T00:41:11.219800Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9919.44 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=2
+2026-04-12T00:41:11.592934Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9969.68 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=11
+2026-04-12T00:41:11.765229Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9844.62 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=6
+2026-04-12T00:41:11.767228Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=-0.0118 oos_consistency=0.0 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:41:12.091797Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9852.87 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=12
+2026-04-12T00:41:12.193374Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9915.51 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=5
+2026-04-12T00:41:12.237134Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10000.0 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=0
+2026-04-12T00:41:12.358107Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9981.27 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=3
+2026-04-12T00:41:12.394601Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10022.53 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=2
+2026-04-12T00:41:12.395725Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=0.0011 oos_consistency=0.5 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:41:16.139694Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9752.59 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=31
+2026-04-12T00:41:17.543787Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9919.08 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=11
+2026-04-12T00:41:18.063446Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10007.88 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=1
+2026-04-12T00:41:19.525313Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9856.83 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=15
+2026-04-12T00:41:20.258148Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9967.11 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=4
+2026-04-12T00:41:20.260727Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=-0.0013 oos_consistency=0.5 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:41:21.271861Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9828.45 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=12
+2026-04-12T00:41:21.675009Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9832.74 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=4
+2026-04-12T00:41:21.807480Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10022.47 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=1
+2026-04-12T00:41:22.255702Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10012.6 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=6
+2026-04-12T00:41:22.426690Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9960.68 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=1
+2026-04-12T00:41:22.427976Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=-0.0008 oos_consistency=0.5 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:41:22.741857Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9793.93 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=4
+2026-04-12T00:41:22.914303Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9880.81 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=2
+2026-04-12T00:41:23.000939Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10000.0 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=0
+2026-04-12T00:41:23.095885Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9912.08 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=2
+2026-04-12T00:41:23.124188Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10000.0 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=0
+2026-04-12T00:41:23.125213Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=0.0 oos_consistency=0.0 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:41:27.117893Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9585.57 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=35
+2026-04-12T00:41:28.418262Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10007.45 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=7
+2026-04-12T00:41:29.037224Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9996.05 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=3
+2026-04-12T00:41:30.372421Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9630.95 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=20
+2026-04-12T00:41:30.988762Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9949.4 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=5
+2026-04-12T00:41:30.992123Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=-0.0027 oos_consistency=0.0 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:41:32.079865Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9806.59 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=9
+2026-04-12T00:41:32.434115Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9866.89 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=4
+2026-04-12T00:41:32.614195Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10000.0 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=0
+2026-04-12T00:41:33.053696Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9938.89 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=5
+2026-04-12T00:41:33.207719Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10000.0 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=0
+2026-04-12T00:41:33.209921Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=0.0 oos_consistency=0.0 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:41:33.502842Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9850.2 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=4
+2026-04-12T00:41:33.590681Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9992.82 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=3
+2026-04-12T00:41:33.626325Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10000.0 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=0
+2026-04-12T00:41:33.709544Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9936.19 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=1
+2026-04-12T00:41:33.763598Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10000.0 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=0
+2026-04-12T00:41:33.765333Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=0.0 oos_consistency=0.0 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:41:37.692024Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9702.06 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=30
+2026-04-12T00:41:39.084206Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9891.79 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=15
+2026-04-12T00:41:39.633263Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9944.83 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=3
+2026-04-12T00:41:41.010817Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9854.99 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=11
+2026-04-12T00:41:41.657608Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10007.73 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=1
+2026-04-12T00:41:41.660497Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=-0.0024 oos_consistency=0.5 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:41:42.792527Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9669.52 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=15
+2026-04-12T00:41:43.197650Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9849.77 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=6
+2026-04-12T00:41:43.342321Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10024.04 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=1
+2026-04-12T00:41:43.688168Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9804.56 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=6
+2026-04-12T00:41:43.881808Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9988.68 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=2
+2026-04-12T00:41:43.883209Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=0.0006 oos_consistency=0.5 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:41:44.168489Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10027.25 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=6
+2026-04-12T00:41:44.277450Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10118.82 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=4
+2026-04-12T00:41:44.318956Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10000.0 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=0
+2026-04-12T00:41:44.422108Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9968.3 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=2
+2026-04-12T00:41:44.468655Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10000.0 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=0
+2026-04-12T00:41:44.469774Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=0.0 oos_consistency=0.0 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:41:48.445357Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9752.59 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=31
+2026-04-12T00:41:49.907950Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9919.08 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=11
+2026-04-12T00:41:50.465983Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10007.88 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=1
+2026-04-12T00:41:51.911419Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9856.83 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=15
+2026-04-12T00:41:52.443919Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9967.11 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=4
+2026-04-12T00:41:52.446081Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=-0.0013 oos_consistency=0.5 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:41:53.488582Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9828.45 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=12
+2026-04-12T00:41:53.809031Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9832.74 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=4
+2026-04-12T00:41:53.950532Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10022.47 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=1
+2026-04-12T00:41:54.394647Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10012.6 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=6
+2026-04-12T00:41:54.565002Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9960.68 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=1
+2026-04-12T00:41:54.567262Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=-0.0008 oos_consistency=0.5 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:41:54.861848Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9793.93 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=4
+2026-04-12T00:41:54.958768Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9880.81 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=2
+2026-04-12T00:41:55.000452Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10000.0 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=0
+2026-04-12T00:41:55.098677Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9912.08 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=2
+2026-04-12T00:41:55.156468Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10000.0 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=0
+2026-04-12T00:41:55.158839Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=0.0 oos_consistency=0.0 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:41:59.248811Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9585.57 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=35
+2026-04-12T00:42:00.554138Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10007.45 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=7
+2026-04-12T00:42:01.176493Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9996.05 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=3
+2026-04-12T00:42:02.727488Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9630.95 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=20
+2026-04-12T00:42:03.415435Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9949.4 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=5
+2026-04-12T00:42:03.418093Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=-0.0027 oos_consistency=0.0 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:42:04.477006Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9806.59 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=9
+2026-04-12T00:42:04.932632Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9866.89 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=4
+2026-04-12T00:42:05.093560Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10000.0 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=0
+2026-04-12T00:42:05.393907Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9938.89 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=5
+2026-04-12T00:42:05.638371Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10000.0 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=0
+2026-04-12T00:42:05.641266Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=0.0 oos_consistency=0.0 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:42:05.874343Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9850.2 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=4
+2026-04-12T00:42:05.979940Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9992.82 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=3
+2026-04-12T00:42:06.027963Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10000.0 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=0
+2026-04-12T00:42:06.118058Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9936.19 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=1
+2026-04-12T00:42:06.178622Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10000.0 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=0
+2026-04-12T00:42:06.179671Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=0.0 oos_consistency=0.0 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:42:10.211435Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9702.06 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=30
+2026-04-12T00:42:11.620255Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9891.79 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=15
+2026-04-12T00:42:12.274889Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9944.83 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=3
+2026-04-12T00:42:13.590761Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9854.99 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=11
+2026-04-12T00:42:14.258926Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10007.73 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=1
+2026-04-12T00:42:14.260747Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=-0.0024 oos_consistency=0.5 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:42:15.333251Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9669.52 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=15
+2026-04-12T00:42:15.736666Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9849.77 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=6
+2026-04-12T00:42:15.886022Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10024.04 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=1
+2026-04-12T00:42:16.252085Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9804.56 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=6
+2026-04-12T00:42:16.420604Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9988.68 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=2
+2026-04-12T00:42:16.421819Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=0.0006 oos_consistency=0.5 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:42:16.780570Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10027.25 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=6
+2026-04-12T00:42:16.896573Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10118.82 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=4
+2026-04-12T00:42:16.933209Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10000.0 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=0
+2026-04-12T00:42:17.023352Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9968.3 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=2
+2026-04-12T00:42:17.067342Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10000.0 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=0
+2026-04-12T00:42:17.069953Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=0.0 oos_consistency=0.0 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:42:21.127004Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9262.02 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=62
+2026-04-12T00:42:22.601530Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9628.03 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=21
+2026-04-12T00:42:23.326801Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10004.1 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=3
+2026-04-12T00:42:24.674342Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9669.07 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=33
+2026-04-12T00:42:25.255439Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9945.02 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=5
+2026-04-12T00:42:25.257774Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=-0.0025 oos_consistency=0.5 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:42:26.301632Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9431.72 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=41
+2026-04-12T00:42:26.676540Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9735.42 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=16
+2026-04-12T00:42:26.842642Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10018.2 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=1
+2026-04-12T00:42:27.223440Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9741.24 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=20
+2026-04-12T00:42:27.373496Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9927.33 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=4
+2026-04-12T00:42:27.374744Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=-0.0027 oos_consistency=0.5 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:42:27.656769Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10262.06 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=15
+2026-04-12T00:42:27.781072Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9967.45 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=7
+2026-04-12T00:42:27.840429Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10000.0 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=0
+2026-04-12T00:42:27.965367Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10116.68 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=5
+2026-04-12T00:42:28.002571Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10066.29 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=1
+2026-04-12T00:42:28.005049Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=0.0033 oos_consistency=0.5 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:42:31.797783Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=8840.91 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=98
+2026-04-12T00:42:33.365802Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9600.02 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=38
+2026-04-12T00:42:33.986124Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9981.48 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=7
+2026-04-12T00:42:35.417663Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9348.14 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=40
+2026-04-12T00:42:36.034969Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9855.72 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=12
+2026-04-12T00:42:36.038162Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=-0.0081 oos_consistency=0.0 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:42:37.096111Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9669.55 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=34
+2026-04-12T00:42:37.524090Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9707.99 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=17
+2026-04-12T00:42:37.682418Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10000.0 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=0
+2026-04-12T00:42:38.012654Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10053.03 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=15
+2026-04-12T00:42:38.235049Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9907.85 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=2
+2026-04-12T00:42:38.237567Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=-0.0046 oos_consistency=0.0 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:42:38.508950Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10095.53 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=7
+2026-04-12T00:42:38.620137Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9935.57 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=5
+2026-04-12T00:42:38.658721Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10000.0 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=0
+2026-04-12T00:42:38.749120Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10049.48 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=1
+2026-04-12T00:42:38.788319Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10000.0 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=0
+2026-04-12T00:42:38.789604Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=0.0 oos_consistency=0.0 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:42:42.749708Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9163.64 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=82
+2026-04-12T00:42:44.082750Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9619.03 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=35
+2026-04-12T00:42:44.696277Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9925.09 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=7
+2026-04-12T00:42:45.976518Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9654.68 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=34
+2026-04-12T00:42:46.571995Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9941.79 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=6
+2026-04-12T00:42:46.575128Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=-0.0067 oos_consistency=0.0 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:42:47.712916Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10015.17 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=43
+2026-04-12T00:42:48.086529Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10062.85 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=15
+2026-04-12T00:42:48.280403Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9955.39 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=4
+2026-04-12T00:42:48.609276Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10058.73 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=16
+2026-04-12T00:42:48.790423Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9938.83 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=8
+2026-04-12T00:42:48.791943Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=-0.0053 oos_consistency=0.0 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:42:48.985797Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9626.06 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=14
+2026-04-12T00:42:49.062512Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10013.57 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=7
+2026-04-12T00:42:49.120596Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10000.0 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=0
+2026-04-12T00:42:49.244015Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9712.16 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=4
+2026-04-12T00:42:49.295489Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9943.21 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=1
+2026-04-12T00:42:49.296567Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=-0.0028 oos_consistency=0.0 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:42:53.299365Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9287.24 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=61
+2026-04-12T00:42:54.632556Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9659.63 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=20
+2026-04-12T00:42:55.229454Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10004.1 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=3
+2026-04-12T00:42:56.737021Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9663.68 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=33
+2026-04-12T00:42:57.339990Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9945.02 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=5
+2026-04-12T00:42:57.341767Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=-0.0025 oos_consistency=0.5 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:42:58.417721Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9503.23 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=39
+2026-04-12T00:42:58.821512Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9703.83 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=15
+2026-04-12T00:42:58.965683Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10018.2 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=1
+2026-04-12T00:42:59.395947Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9847.04 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=19
+2026-04-12T00:42:59.578098Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9927.33 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=4
+2026-04-12T00:42:59.579411Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=-0.0027 oos_consistency=0.5 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:42:59.868633Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10221.12 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=12
+2026-04-12T00:42:59.979681Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10008.44 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=5
+2026-04-12T00:43:00.033571Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10000.0 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=0
+2026-04-12T00:43:00.127520Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10035.06 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=4
+2026-04-12T00:43:00.184582Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10066.29 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=1
+2026-04-12T00:43:00.187094Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=0.0033 oos_consistency=0.5 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:43:04.471948Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9037.33 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=93
+2026-04-12T00:43:05.920292Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9702.45 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=36
+2026-04-12T00:43:06.542057Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9981.48 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=7
+2026-04-12T00:43:07.857499Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9454.95 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=37
+2026-04-12T00:43:08.425377Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9855.72 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=12
+2026-04-12T00:43:08.427145Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=-0.0081 oos_consistency=0.0 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:43:09.377659Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9555.45 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=32
+2026-04-12T00:43:09.772790Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9772.28 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=16
+2026-04-12T00:43:09.947070Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10000.0 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=0
+2026-04-12T00:43:10.342991Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9869.06 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=14
+2026-04-12T00:43:10.548789Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9907.85 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=2
+2026-04-12T00:43:10.552466Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=-0.0046 oos_consistency=0.0 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:43:10.804095Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9899.26 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=6
+2026-04-12T00:43:10.879297Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9742.41 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=4
+2026-04-12T00:43:10.952307Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10000.0 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=0
+2026-04-12T00:43:11.054346Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10049.48 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=1
+2026-04-12T00:43:11.125010Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10000.0 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=0
+2026-04-12T00:43:11.126715Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=0.0 oos_consistency=0.0 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:43:15.268242Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9156.51 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=80
+2026-04-12T00:43:16.750352Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9619.03 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=35
+2026-04-12T00:43:17.332941Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9925.09 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=7
+2026-04-12T00:43:18.790590Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9645.28 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=32
+2026-04-12T00:43:19.321086Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9943.74 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=6
+2026-04-12T00:43:19.324207Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=-0.0066 oos_consistency=0.0 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:43:20.412867Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9967.96 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=42
+2026-04-12T00:43:20.820671Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10015.42 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=14
+2026-04-12T00:43:20.962583Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9955.39 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=4
+2026-04-12T00:43:21.313361Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10058.73 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=16
+2026-04-12T00:43:21.473883Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9938.83 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=8
+2026-04-12T00:43:21.477270Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=-0.0053 oos_consistency=0.0 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:43:21.750786Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9626.06 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=14
+2026-04-12T00:43:21.834294Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10013.57 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=7
+2026-04-12T00:43:21.877505Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10000.0 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=0
+2026-04-12T00:43:21.988036Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9712.16 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=4
+2026-04-12T00:43:22.024687Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9943.21 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=1
+2026-04-12T00:43:22.027619Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=-0.0028 oos_consistency=0.0 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:43:26.133263Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9472.01 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=54
+2026-04-12T00:43:27.585471Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9879.88 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=20
+2026-04-12T00:43:28.181104Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10044.95 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=4
+2026-04-12T00:43:29.524287Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9661.65 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=24
+2026-04-12T00:43:30.134332Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9878.52 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=6
+2026-04-12T00:43:30.136320Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=-0.0038 oos_consistency=0.5 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:43:31.163695Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9814.93 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=22
+2026-04-12T00:43:31.526005Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9822.56 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=8
+2026-04-12T00:43:31.648511Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10022.47 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=1
+2026-04-12T00:43:32.033054Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10043.93 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=10
+2026-04-12T00:43:32.233732Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9896.42 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=3
+2026-04-12T00:43:32.236061Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=-0.0041 oos_consistency=0.5 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:43:32.526807Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10073.33 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=9
+2026-04-12T00:43:32.680519Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10019.65 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=4
+2026-04-12T00:43:32.736367Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10000.0 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=0
+2026-04-12T00:43:32.842129Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10053.58 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=5
+2026-04-12T00:43:32.894348Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10000.0 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=0
+2026-04-12T00:43:32.895464Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=0.0 oos_consistency=0.0 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:43:36.963698Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9396.16 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=64
+2026-04-12T00:43:38.445993Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9950.99 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=21
+2026-04-12T00:43:39.067867Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10008.28 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=7
+2026-04-12T00:43:40.415555Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9571.75 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=25
+2026-04-12T00:43:41.078072Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9856.75 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=11
+2026-04-12T00:43:41.080915Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=-0.0067 oos_consistency=0.5 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:43:42.089201Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9670.07 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=11
+2026-04-12T00:43:42.431823Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9705.26 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=5
+2026-04-12T00:43:42.600088Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10000.0 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=0
+2026-04-12T00:43:42.988349Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9963.74 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=6
+2026-04-12T00:43:43.181913Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10000.0 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=0
+2026-04-12T00:43:43.183640Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=0.0 oos_consistency=0.0 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:43:43.426857Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10023.52 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=9
+2026-04-12T00:43:43.539302Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9952.1 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=5
+2026-04-12T00:43:43.585529Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10000.0 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=0
+2026-04-12T00:43:43.668114Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10071.77 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=4
+2026-04-12T00:43:43.719173Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10000.0 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=0
+2026-04-12T00:43:43.721417Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=0.0 oos_consistency=0.0 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:43:47.784279Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9236.07 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=66
+2026-04-12T00:43:49.270592Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9798.18 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=29
+2026-04-12T00:43:49.862061Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9950.56 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=6
+2026-04-12T00:43:51.196187Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9599.69 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=23
+2026-04-12T00:43:51.888031Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9868.18 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=8
+2026-04-12T00:43:51.890083Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=-0.0091 oos_consistency=0.0 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:43:52.992891Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9961.04 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=16
+2026-04-12T00:43:53.408966Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9932.73 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=6
+2026-04-12T00:43:53.569213Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10012.98 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=1
+2026-04-12T00:43:53.916876Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10026.76 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=5
+2026-04-12T00:43:54.042007Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9968.88 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=4
+2026-04-12T00:43:54.043267Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=-0.0009 oos_consistency=0.5 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:43:54.303597Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10030.17 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=6
+2026-04-12T00:43:54.494756Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9831.18 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=2
+2026-04-12T00:43:54.637157Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10000.0 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=0
+2026-04-12T00:43:54.805382Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10132.41 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=3
+2026-04-12T00:43:54.885294Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10069.08 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=1
+2026-04-12T00:43:54.887501Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=0.0035 oos_consistency=0.5 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:43:58.924667Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9505.83 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=53
+2026-04-12T00:44:00.414721Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9879.88 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=20
+2026-04-12T00:44:01.157361Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10044.95 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=4
+2026-04-12T00:44:02.624563Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9696.14 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=23
+2026-04-12T00:44:03.212735Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9878.52 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=6
+2026-04-12T00:44:03.215739Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=-0.0038 oos_consistency=0.5 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:44:04.238150Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9814.93 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=22
+2026-04-12T00:44:04.557257Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9822.56 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=8
+2026-04-12T00:44:04.738681Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10022.47 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=1
+2026-04-12T00:44:05.192685Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10043.93 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=10
+2026-04-12T00:44:05.351224Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9896.42 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=3
+2026-04-12T00:44:05.353242Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=-0.0041 oos_consistency=0.5 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:44:05.605639Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9986.39 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=8
+2026-04-12T00:44:05.702218Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9933.17 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=3
+2026-04-12T00:44:05.754303Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10000.0 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=0
+2026-04-12T00:44:05.878057Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10053.58 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=5
+2026-04-12T00:44:05.934689Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10000.0 strategy=bollinger_mean_reversion symbol=BTCUSDT trades=0
+2026-04-12T00:44:05.935679Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=0.0 oos_consistency=0.0 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:44:10.138637Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9396.16 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=64
+2026-04-12T00:44:11.821449Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9950.99 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=21
+2026-04-12T00:44:12.384400Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10008.28 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=7
+2026-04-12T00:44:13.762034Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9571.75 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=25
+2026-04-12T00:44:14.417438Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9856.75 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=11
+2026-04-12T00:44:14.419778Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=-0.0067 oos_consistency=0.5 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:44:15.465729Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9670.07 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=11
+2026-04-12T00:44:15.814439Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9705.26 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=5
+2026-04-12T00:44:16.004693Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10000.0 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=0
+2026-04-12T00:44:16.348004Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9963.74 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=6
+2026-04-12T00:44:16.505513Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10000.0 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=0
+2026-04-12T00:44:16.509059Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=0.0 oos_consistency=0.0 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:44:16.754187Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9841.99 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=8
+2026-04-12T00:44:16.871862Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9771.86 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=4
+2026-04-12T00:44:16.981158Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10000.0 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=0
+2026-04-12T00:44:17.080277Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10071.77 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=4
+2026-04-12T00:44:17.147132Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10000.0 strategy=bollinger_mean_reversion symbol=ETHUSDT trades=0
+2026-04-12T00:44:17.148182Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=0.0 oos_consistency=0.0 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:44:21.290502Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9262.65 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=65
+2026-04-12T00:44:22.731134Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9798.18 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=29
+2026-04-12T00:44:23.307785Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9950.56 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=6
+2026-04-12T00:44:24.817222Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9599.69 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=23
+2026-04-12T00:44:25.442023Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9896.58 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=7
+2026-04-12T00:44:25.444670Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=-0.0076 oos_consistency=0.0 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:44:26.620806Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9961.04 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=16
+2026-04-12T00:44:27.097656Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9932.73 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=6
+2026-04-12T00:44:27.278410Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10012.98 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=1
+2026-04-12T00:44:27.723053Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10026.76 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=5
+2026-04-12T00:44:27.863461Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9968.88 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=4
+2026-04-12T00:44:27.864764Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=-0.0009 oos_consistency=0.5 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:44:28.149844Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10030.17 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=6
+2026-04-12T00:44:28.243395Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=9831.18 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=2
+2026-04-12T00:44:28.290734Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10000.0 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=0
+2026-04-12T00:44:28.383616Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10132.41 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=3
+2026-04-12T00:44:28.415232Z [info     ] backtest_complete              [app.backtesting.engine] final_equity=10069.08 strategy=bollinger_mean_reversion symbol=BNBUSDT trades=1
+2026-04-12T00:44:28.416301Z [info     ] walk_forward_complete          [app.backtesting.validation] avg_test_return=0.0035 oos_consistency=0.5 strategy=bollinger_mean_reversion windows=2
+2026-04-12T00:44:28.416707Z [info     ] matrix_optimization_complete   [app.backtesting.optimizer] best_robust_score=np.float64(0.2942) evaluated=8 has_pass_rate=False has_qualified=False strategy=bollinger_mean_reversion
+bollinger_mean_reversion ---------------------------------------- 8/8 0:00:00
+                       Top 3 - bollinger_mean_reversion                        
++-----------------------------------------------------------------------------+
+|     |       |   Avg |   Avg |   Avg |   Max |  Pass |      |    OOS | Key   |
+| #   | Robu� | Retu� | Shar� | Alpha |    DD |  Rate | Qual |    Ret | Para� |
+|-----+-------+-------+-------+-------+-------+-------+------+--------+-------|
+| 1   | 0.294 | -4.1� | -1.46 | +40.� | 10.5� |   11% | 1/9  | -0.54% | bb_p� |
+|     |       |       |       |       |       |       |      |        | bb_s� |
+|     |       |       |       |       |       |       |      |        | cool� |
+| 2   | 0.273 | -4.0� | -1.19 | +41.� | 11.7� |   33% | 3/9  | -0.33% | bb_p� |
+|     |       |       |       |       |       |       |      |        | bb_s� |
+|     |       |       |       |       |       |       |      |        | cool� |
+| 3   | 0.264 | -2.5� | -0.92 | +42.� | 9.13% |   33% | 3/9  | -0.23% | bb_p� |
+|     |       |       |       |       |       |       |      |        | bb_s� |
+|     |       |       |       |       |       |       |      |        | cool� |
++-----------------------------------------------------------------------------+
+  No param set meets pass-rate >=50%
+
+============================================================
+Global best: bollinger_mean_reversion (robustness=0.294)
+  Return=-4.11%  Sharpe=-1.46  Alpha=+40.96%  Consistency=11%
+  Params: {'bb_period': 20, 'bb_std_dev': 2.0, 'cooldown_bars': 6}
+No parameter set qualifies across all datasets
+Approval source: bollinger_mean_reversion (3/9 datasets qualified, 
+robustness=0.273)
+2026-04-12T00:44:28.679664Z [info     ] paper_broker_initialized       [app.execution.paper_broker] initial_balance=10000.0 quote_asset=USDT
+2026-04-12T00:45:36.380536Z [info     ] parity_audit_complete          [app.backtesting.parity_auditor] execution_ratio=0.0147 interval=4h strategy=bollinger_mean_reversion symbol=BTCUSDT trades=14 verdict=approved
+2026-04-12T00:45:36.477702Z [info     ] paper_broker_initialized       [app.execution.paper_broker] initial_balance=10000.0 quote_asset=USDT
+2026-04-12T00:46:44.240617Z [info     ] parity_audit_complete          [app.backtesting.parity_auditor] execution_ratio=0.0053 interval=4h strategy=bollinger_mean_reversion symbol=ETHUSDT trades=5 verdict=approved
+2026-04-12T00:46:44.301883Z [info     ] paper_broker_initialized       [app.execution.paper_broker] initial_balance=10000.0 quote_asset=USDT
+2026-04-12T00:47:48.329394Z [info     ] parity_audit_complete          [app.backtesting.parity_auditor] execution_ratio=0.0105 interval=1h strategy=bollinger_mean_reversion symbol=BNBUSDT trades=10 verdict=downgraded
+[WARN] Runtime parity downgraded 1 approval(s) before persistence
+2026-04-12T00:47:48.348026Z [info     ] approved_combinations_saved    [app.persistence.repositories] approved=2 total=9
+Approvals persisted: 2/9 datasets approved
+2026-04-12T00:47:48.360681Z [info     ] exported_json                  [app.reporting.exporters] file=outputs\reports\optimization_report.json
+Report exported: outputs\reports\optimization_report.json
+
+Step 3/5: Audit approved combinations
+2026-04-12T00:47:48.370032Z [info     ] database_initialized           [app.persistence.db] tables=['candles', 'strategy_definitions', 'backtest_runs', 'backtest_trades', 'signals', 'trades', 'positions', 'account_snapshots', 'notifications', 'incidents', 'selected_strategies', 'approved_combinations']
+
+Auditing 2 approved combinations...
+
+  Auditing BTCUSDT/4h... 2026-04-12T00:47:48.492492Z [info     ] paper_broker_initialized       [app.execution.paper_broker] initial_balance=10000.0 quote_asset=USDT
+2026-04-12T00:48:54.926474Z [info     ] parity_audit_complete          [app.backtesting.parity_auditor] execution_ratio=0.0147 interval=4h strategy=bollinger_mean_reversion symbol=BTCUSDT trades=14 verdict=approved
+APPROVED (trades=14, exec=1.47%)
+  Auditing ETHUSDT/4h... 2026-04-12T00:48:54.977270Z [info     ] paper_broker_initialized       [app.execution.paper_broker] initial_balance=10000.0 quote_asset=USDT
+2026-04-12T00:50:02.016846Z [info     ] parity_audit_complete          [app.backtesting.parity_auditor] execution_ratio=0.0053 interval=4h strategy=bollinger_mean_reversion symbol=ETHUSDT trades=5 verdict=approved
+APPROVED (trades=5, exec=0.53%)
+
+                             Parity Audit Results                              
++-----------------------------------------------------------------------------+
+|         |         |        | Lifecy� |    Risk |    Exec |         |        |
+| Symbol  | Interv� | Trades |     Blk |     Rej |   Ratio | Net PnL | Verdi� |
+|---------+---------+--------+---------+---------+---------+---------+--------|
+| BTCUSDT | 4h      |     14 |       8 |       0 |   1.47% | $+635.� | APPRO� |
+| ETHUSDT | 4h      |      5 |      10 |       0 |   0.53% | $+470.� | APPRO� |
++-----------------------------------------------------------------------------+
+
+Runtime-viable: 2/2 | Downgraded: 0
+2026-04-12T00:50:02.029781Z [info     ] exported_json                  [app.reporting.exporters] file=outputs\reports\parity_audit_report.json
+Report exported: outputs\reports\parity_audit_report.json
+
+Step 4/5: Paper readiness
+2026-04-12T00:50:02.043467Z [info     ] database_initialized           [app.persistence.db] tables=['candles', 'strategy_definitions', 'backtest_runs', 'backtest_trades', 'signals', 'trades', 'positions', 'account_snapshots', 'notifications', 'incidents', 'selected_strategies', 'approved_combinations']
+           Paper Readiness           
++-----------------------------------+
+| Metric              |       Value |
+|---------------------+-------------|
+| Decision            | PAPER_READY |
+| Trading Mode        |       paper |
+| Live Enabled        |       False |
+| Configured Interval |          4h |
+| Approved            |         2/9 |
++-----------------------------------+
+                   Approved Paper Datasets                   
++-----------------------------------------------------------+
+| Symbol  | Interval | Strategy                 | Pass Rate |
+|---------+----------+--------------------------+-----------|
+| BTCUSDT | 4h       | bollinger_mean_reversion |       33% |
+| ETHUSDT | 4h       | bollinger_mean_reversion |       33% |
++-----------------------------------------------------------+
+2026-04-12T00:50:02.055026Z [info     ] exported_json                  [app.reporting.exporters] file=outputs\reports\paper_readiness_report.json
+Report exported: outputs\reports\paper_readiness_report.json
+
+Step 5/5: Paper sim smoke
+2026-04-12T00:50:02.064034Z [info     ] database_initialized           [app.persistence.db] tables=['candles', 'strategy_definitions', 'backtest_runs', 'backtest_trades', 'signals', 'trades', 'positions', 'account_snapshots', 'notifications', 'incidents', 'selected_strategies', 'approved_combinations']
+Strategy (approval-driven): bollinger_mean_reversion (robustness=0.273, 
+pass-rate=33%)
+Params: {'bb_period': 30, 'bb_std_dev': 2.0, 'cooldown_bars': 6}
+Approved datasets (2):
+  [OK] BTCUSDT/4h
+  [OK] ETHUSDT/4h
+2026-04-12T00:50:02.067938Z [info     ] paper_broker_initialized       [app.execution.paper_broker] initial_balance=10000.0 quote_asset=USDT
+Telegram notifications: disabled for sim replay
+Regime gating: enabled (vol 0.2-8.0%)
+
+SIM MODE: replaying BTCUSDT (4h)
+Loaded 300 candles for replay
+
+2026-04-12T00:50:02.076946Z [info     ] replay_persistence_suppressed  [app.services.orchestrator]
+2026-04-12T00:50:02.077859Z [info     ] replay_started                 [app.services.orchestrator] initial_equity=10000.0 strategy=bollinger_mean_reversion total_candles=300
+2026-04-12T00:50:04.080003Z [info     ] lifecycle_blocked_no_position  [app.services.orchestrator] reason='SELL signal but no open position' symbol=BTCUSDT
+2026-04-12T00:50:06.251380Z [info     ] risk_final_decision            [app.risk.risk_engine] approved=True signal_type=BUY symbol=BTCUSDT
+2026-04-12T00:50:06.251907Z [info     ] paper_order_filled             [app.execution.paper_broker] fee=3.996 order_id=d11cf634-ecd price=66473.68728 quantity=0.06011407159004218 side=BUY symbol=BTCUSDT
+2026-04-12T00:50:06.974859Z [info     ] paper_order_filled             [app.execution.paper_broker] fee=4.1102 order_id=3f646432-fc2 price=68372.84300142857 quantity=0.06011407159004218 side=SELL symbol=BTCUSDT
+2026-04-12T00:50:06.976119Z [info     ] position_closed_by_sl_tp       [app.services.orchestrator] exit_price=68441.28428571428 pnl=106.06 reason=take_profit symbol=BTCUSDT
+2026-04-12T00:50:08.520767Z [info     ] lifecycle_blocked_no_position  [app.services.orchestrator] reason='SELL signal but no open position' symbol=BTCUSDT
+2026-04-12T00:50:09.733337Z [info     ] replay_complete                [app.services.orchestrator] equity=10106.059809023589 lifecycle_blocked=2 net_pnl=106.06 rejected=0 trades=1
+Replaying candles... ---------------------------------------- 100% 0:00:00
+             Replay Summary             
++--------------------------------------+
+| Metric                  |      Value |
+|-------------------------+------------|
+| Total Candles           |        300 |
+| Trades Executed         |          1 |
+| Lifecycle Blocked       |          2 |
+| Signals Rejected (risk) |          0 |
+| Order Rejected (broker) |          0 |
+| Regime Blocked          |          0 |
+| Errors                  |          0 |
+| Initial Capital         | $10,000.00 |
+| Final Equity            | $10,106.06 |
+| Net PnL                 |   $+106.06 |
+| Open Positions          |          0 |
++--------------------------------------+
+
+[OK] Research cycle complete

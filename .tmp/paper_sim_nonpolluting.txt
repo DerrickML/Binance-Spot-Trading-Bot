@@ -1,0 +1,49 @@
+2026-04-12T00:14:47.156236Z [info     ] strategy_registered            [app.strategies.registry] cls=EmaAtrStrategy name=ema_atr_crossover
+2026-04-12T00:14:47.159429Z [info     ] strategy_registered            [app.strategies.registry] cls=RsiMeanReversionStrategy name=rsi_mean_reversion
+2026-04-12T00:14:47.161613Z [info     ] strategy_registered            [app.strategies.registry] cls=BollingerMeanReversionStrategy name=bollinger_mean_reversion
+2026-04-12T00:14:47.163489Z [info     ] strategy_registered            [app.strategies.registry] cls=BreakoutStrategy name=breakout
+2026-04-12T00:14:47.165196Z [info     ] strategy_registered            [app.strategies.registry] cls=RegimeStrategy name=regime_adaptive
+2026-04-12T00:14:47.166641Z [info     ] strategy_registered            [app.strategies.registry] cls=MomentumContinuationStrategy name=momentum_continuation
+2026-04-12T00:14:47.168278Z [info     ] strategy_registered            [app.strategies.registry] cls=PullbackUptrendStrategy name=pullback_uptrend
+2026-04-12T00:14:47.169913Z [info     ] strategy_registered            [app.strategies.registry] cls=VolatilityBreakoutStrategy name=volatility_breakout
+2026-04-12T00:14:47.979947Z [info     ] database_engine_created        [app.persistence.db] url=sqlite:///data/trading_bot.db
+2026-04-12T00:14:47.987674Z [info     ] database_initialized           [app.persistence.db] tables=['candles', 'strategy_definitions', 'backtest_runs', 'backtest_trades', 'signals', 'trades', 'positions', 'account_snapshots', 'notifications', 'incidents', 'selected_strategies', 'approved_combinations']
+Strategy (approval-driven): bollinger_mean_reversion (robustness=0.272, 
+pass-rate=33%)
+Params: {'bb_period': 30, 'bb_std_dev': 2.0, 'cooldown_bars': 6}
+Approved datasets (2):
+  [OK] BTCUSDT/4h
+  [OK] ETHUSDT/4h
+2026-04-12T00:14:48.209947Z [info     ] paper_broker_initialized       [app.execution.paper_broker] initial_balance=10000.0 quote_asset=USDT
+Telegram notifications: disabled for sim replay
+Regime gating: enabled (vol 0.2-8.0%)
+
+SIM MODE: replaying BTCUSDT (4h)
+Loaded 300 candles for replay
+
+2026-04-12T00:14:48.228915Z [info     ] replay_persistence_suppressed  [app.services.orchestrator]
+2026-04-12T00:14:48.229279Z [info     ] replay_started                 [app.services.orchestrator] initial_equity=10000.0 strategy=bollinger_mean_reversion total_candles=300
+2026-04-12T00:14:50.421144Z [info     ] lifecycle_blocked_no_position  [app.services.orchestrator] reason='SELL signal but no open position' symbol=BTCUSDT
+2026-04-12T00:14:52.521714Z [info     ] risk_final_decision            [app.risk.risk_engine] approved=True signal_type=BUY symbol=BTCUSDT
+2026-04-12T00:14:52.522603Z [info     ] paper_order_filled             [app.execution.paper_broker] fee=3.996 order_id=ca092a8b-58d price=66473.68728 quantity=0.06011407159004218 side=BUY symbol=BTCUSDT
+2026-04-12T00:14:53.388154Z [info     ] paper_order_filled             [app.execution.paper_broker] fee=4.1102 order_id=a106805a-d24 price=68372.84300142857 quantity=0.06011407159004218 side=SELL symbol=BTCUSDT
+2026-04-12T00:14:53.389087Z [info     ] position_closed_by_sl_tp       [app.services.orchestrator] exit_price=68441.28428571428 pnl=106.06 reason=take_profit symbol=BTCUSDT
+2026-04-12T00:14:54.713146Z [info     ] lifecycle_blocked_no_position  [app.services.orchestrator] reason='SELL signal but no open position' symbol=BTCUSDT
+2026-04-12T00:14:55.875816Z [info     ] replay_complete                [app.services.orchestrator] equity=10106.059809023589 lifecycle_blocked=2 net_pnl=106.06 rejected=0 trades=1
+Replaying candles... ---------------------------------------- 100% 0:00:00
+             Replay Summary             
++--------------------------------------+
+| Metric                  |      Value |
+|-------------------------+------------|
+| Total Candles           |        300 |
+| Trades Executed         |          1 |
+| Lifecycle Blocked       |          2 |
+| Signals Rejected (risk) |          0 |
+| Order Rejected (broker) |          0 |
+| Regime Blocked          |          0 |
+| Errors                  |          0 |
+| Initial Capital         | $10,000.00 |
+| Final Equity            | $10,106.06 |
+| Net PnL                 |   $+106.06 |
+| Open Positions          |          0 |
++--------------------------------------+

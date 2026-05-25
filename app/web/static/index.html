@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trading Bot Dashboard</title>
+  <meta name="description" content="Secure management dashboard for the Binance Spot trading bot">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📈</text></svg>">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+  <!-- ═══════════ LOGIN VIEW ═══════════ -->
+  <div id="login-view" class="view">
+    <div class="login-card">
+      <div class="logo">🤖</div>
+      <h1>Trading Bot</h1>
+      <p class="subtitle">Authenticate via Telegram to continue</p>
+
+      <div id="login-msg" class="message"></div>
+
+      <div id="request-step" class="step">
+        <p style="color: var(--text-secondary); font-size: .85rem; margin-bottom: 20px;">
+          A one-time code will be sent to your configured Telegram chat.
+        </p>
+        <button id="btn-request-otp" class="btn btn-primary btn-block">
+          🔐 Request Login Code
+        </button>
+      </div>
+
+      <div id="otp-step" class="step" style="display: none;">
+        <p style="color: var(--text-secondary); font-size: .85rem; margin-bottom: 14px;">
+          Enter the 6-digit code from Telegram:
+        </p>
+        <input type="text" id="otp-code" class="otp-input" maxlength="6"
+               placeholder="000000" autocomplete="one-time-code">
+        <div style="height: 16px;"></div>
+        <button id="btn-verify-otp" class="btn btn-primary btn-block">
+          Verify &amp; Login
+        </button>
+        <div style="height: 12px;"></div>
+        <button onclick="document.getElementById('otp-step').style.display='none';document.getElementById('request-step').style.display='block';"
+                class="btn btn-secondary btn-sm btn-block">
+          ← Back
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ MAIN APP ═══════════ -->
+  <div id="app" class="view" style="display: none;">
+
+    <!-- Navigation -->
+    <nav id="main-nav">
+      <div class="nav-inner">
+        <span class="nav-brand">📈 Trading Bot</span>
+        <span class="nav-tab active" data-tab="dashboard">Dashboard</span>
+        <span class="nav-tab" data-tab="commands">Commands</span>
+        <span class="nav-tab" data-tab="history">History</span>
+        <span class="nav-spacer"></span>
+        <span class="nav-status">
+          <span id="ws-dot" class="status-dot"></span>
+          <span id="ws-text">Connecting...</span>
+        </span>
+        <span class="nav-status" style="border-left: 1px solid var(--border); margin-left: 8px; padding-left: 16px;">
+          <span id="nav-cmd-dot" class="status-dot"></span>
+          <span id="nav-cmd-text">Idle</span>
+        </span>
+        <span class="nav-tab" data-tab="logout" style="color: var(--error);">Logout</span>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <!-- ═══════ DASHBOARD ═══════ -->
+      <div id="dashboard-view" class="tab-content">
+        <div class="dashboard-grid">
+
+          <!-- Status Cards -->
+          <div>
+            <div class="section-title">⚙️ System Status</div>
+            <div id="status-cards" class="stats-grid">
+              <div class="stat-card"><div class="stat-label">Loading...</div><div class="stat-value">—</div></div>
+            </div>
+          </div>
+
+          <!-- Equity Chart -->
+          <div>
+            <div class="section-title">📈 Equity Curve</div>
+            <div class="chart-container">
+              <canvas id="equity-canvas"></canvas>
+            </div>
+          </div>
+
+          <!-- Winner -->
+          <div>
+            <div class="section-title">🏆 Current Winner</div>
+            <div id="winner-section">
+              <div class="empty-state"><div class="icon">🏆</div><p>Loading...</p></div>
+            </div>
+          </div>
+
+          <!-- Approved Combinations -->
+          <div>
+            <div class="section-title">✅ Approved Combinations</div>
+            <div id="approved-grid" class="combos-grid">
+              <div class="empty-state"><div class="icon">📊</div><p>Loading...</p></div>
+            </div>
+          </div>
+
+          <!-- Recent Trades -->
+          <div>
+            <div class="section-title">💹 Recent Trades</div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Symbol</th>
+                    <th>Side</th>
+                    <th>Qty</th>
+                    <th>Price</th>
+                    <th>PnL</th>
+                    <th>Strategy</th>
+                    <th>Time</th>
+                  </tr>
+                </thead>
+                <tbody id="trades-table-body">
+                  <tr><td colspan="7" style="text-align:center;color:var(--text-muted)">Loading...</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ═══════ COMMANDS ═══════ -->
+      <div id="commands-view" class="tab-content" style="display: none;">
+        <div class="dashboard-grid">
+          <div>
+            <div class="section-title">🖥️ Command Runner</div>
+
+            <div id="running-indicator" class="running-indicator" style="display: none;"></div>
+
+            <div class="command-controls">
+              <div class="field">
+                <label for="cmd-select">Command</label>
+                <select id="cmd-select">
+                  <option value="">— Loading —</option>
+                </select>
+              </div>
+              <div class="field grow">
+                <label for="cmd-args">Arguments</label>
+                <input type="text" id="cmd-args" placeholder="--strategy hybrid_grid_dca --wf">
+              </div>
+              <div class="field">
+                <button id="btn-run-cmd" class="btn btn-primary">▶ Run</button>
+              </div>
+              <div class="field">
+                <button id="btn-stop-cmd" class="btn btn-danger" style="display: none;">⏹ Force Stop</button>
+              </div>
+            </div>
+
+            <div class="terminal-container">
+              <div class="terminal-header">
+                <div class="dots">
+                  <span class="dot red"></span>
+                  <span class="dot yellow"></span>
+                  <span class="dot green"></span>
+                </div>
+                <span>Terminal Output</span>
+              </div>
+              <div id="terminal-output" class="terminal-output"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══════ HISTORY ═══════ -->
+      <div id="history-view" class="tab-content" style="display: none;">
+        <div class="dashboard-grid">
+          <div>
+            <div class="section-title">📜 Command History</div>
+            <div id="history-list">
+              <div class="empty-state"><div class="icon">📜</div><p>Loading...</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
