@@ -57,6 +57,13 @@
 
   // ── Navigation ────────────────────────────────────────────
   function showLogin() {
+    // Stop all background activity that could trigger another 401 → showLogin loop
+    if (dashboardInterval) { clearInterval(dashboardInterval); dashboardInterval = null; }
+    if (ws) { ws.close(); ws = null; }
+
+    // If login view is already showing (e.g., user is mid-OTP flow), don't reset the form
+    if ($('#login-view').style.display === 'flex') return;
+
     $('#login-view').style.display = 'flex';
     $('#app').style.display = 'none';
     $('#login-msg').className = 'message';
@@ -567,7 +574,9 @@
         const t = tab.dataset.tab;
         if (t === 'logout') {
           Auth.clearToken();
-          if (ws) ws.close();
+          // Force login view to fully reset by hiding it first
+          // (showLogin skips reset if already visible to protect OTP flow)
+          $('#login-view').style.display = 'none';
           showLogin();
         } else {
           showTab(t);
